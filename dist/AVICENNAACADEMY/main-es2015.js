@@ -10166,6 +10166,7 @@ __webpack_require__.r(__webpack_exports__);
 
 class ConceptsService {
     constructor() { }
+    // "https://avicenna.pina-app.com/storage/";
     static getHeader() {
         let contentHeader = new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpHeaders"]().set('Accept', 'application/json');
         return contentHeader;
@@ -10177,8 +10178,9 @@ class ConceptsService {
         return contentHeaders;
     }
 }
-ConceptsService.Domain_Url = "https://avicenna.pina-app.com/api/";
-ConceptsService.imageUrlProfile = "https://avicenna.pina-app.com/storage/";
+ConceptsService.Domain_Url = "http://backend.avicennaacademy.com.au/api/";
+// "https://avicenna.pina-app.com/api/"
+ConceptsService.imageUrlProfile = "http://backend.avicennaacademy.com.au/storage/";
 ConceptsService.ɵfac = function ConceptsService_Factory(t) { return new (t || ConceptsService)(); };
 ConceptsService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({ token: ConceptsService, factory: ConceptsService.ɵfac, providedIn: 'root' });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](ConceptsService, [{

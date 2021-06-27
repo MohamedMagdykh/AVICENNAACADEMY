@@ -19609,7 +19609,8 @@
       var ConceptsService = /*#__PURE__*/function () {
         function ConceptsService() {
           _classCallCheck(this, ConceptsService);
-        }
+        } // "https://avicenna.pina-app.com/storage/";
+
 
         _createClass(ConceptsService, null, [{
           key: "getHeader",
@@ -19630,8 +19631,9 @@
         return ConceptsService;
       }();
 
-      ConceptsService.Domain_Url = "https://avicenna.pina-app.com/api/";
-      ConceptsService.imageUrlProfile = "https://avicenna.pina-app.com/storage/";
+      ConceptsService.Domain_Url = "http://backend.avicennaacademy.com.au/api/"; // "https://avicenna.pina-app.com/api/"
+
+      ConceptsService.imageUrlProfile = "http://backend.avicennaacademy.com.au/storage/";
 
       ConceptsService.ɵfac = function ConceptsService_Factory(t) {
         return new (t || ConceptsService)();

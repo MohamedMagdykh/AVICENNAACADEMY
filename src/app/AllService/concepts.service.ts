@@ -8,8 +8,10 @@ import { Injectable } from '@angular/core';
 export class ConceptsService {
 
   constructor() { }
-  public static Domain_Url="https://avicenna.pina-app.com/api/"
-  public static imageUrlProfile = "https://avicenna.pina-app.com/storage/";
+  public static Domain_Url="http://backend.avicennaacademy.com.au/api/"
+  // "https://avicenna.pina-app.com/api/"
+  public static imageUrlProfile ="http://backend.avicennaacademy.com.au/storage/"
+  // "https://avicenna.pina-app.com/storage/";
 
    
 
