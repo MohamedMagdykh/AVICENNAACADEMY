@@ -1,0 +1,113 @@
+.s1
+{
+    .right-part
+{
+    padding: 10% 5%;
+    margin-left: 16.666667%;
+}
+    .left-part
+    {
+        position: fixed;
+        top:0;
+        bottom:0;
+        background:rgb(7, 12, 44) ;
+        padding-top: 6%;
+        margin-top: 2%;
+        
+        .active
+        {
+            width: 100%;
+            background: #5fcfdf;
+            color: white !important;
+            outline:0px !important;
+    
+        }
+        .content
+        {
+           
+            color: rgb(189, 189, 189);
+            cursor: pointer;
+
+        }
+        h5
+        {
+            padding: 5%;
+         
+            .fas
+            {
+                margin-right: 1%;
+            }
+            
+        }
+       
+        .LogOut
+        {
+            bottom: 10%;
+            position: absolute;
+            left: 0;
+            right: 0;
+    
+        }
+    }
+
+  
+    
+
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px)
+{
+    .s1
+    {
+            .right-part
+        {
+            padding: 10% 1%;
+        }
+    } 
+    
+    
+    
+
+}
+@media only screen and (min-width: 768px) and (max-width: 991px)
+{
+    
+    .s1
+    {
+        .right-part
+    {
+        padding: 10% 1%;
+    }
+    } 
+  
+
+}
+@media only screen and (max-width: 767px) 
+{
+    .s1
+		{
+                .left-part
+                {
+                    padding-top: 12% !important;
+        
+                }
+                .right-part
+                {
+                    padding: 12% 1%;
+                }
+        }
+
+ 
+
+}    
+@media only screen and (max-width: 450px) 
+{
+    .s1
+		{
+		 .left-part
+		 {
+			 padding-top: 16% !important;
+	
+		 }
+        }
+    
+}

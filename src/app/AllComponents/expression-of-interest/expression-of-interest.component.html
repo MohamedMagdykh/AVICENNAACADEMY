@@ -1,0 +1,229 @@
+
+<article class="content ">
+  <section class="hero-wrap hero-wrap-2" style="background-image: url('../../../assets/aboutUs.jpg');">
+    <div class="overlay"></div>
+    <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
+              <div class="col-md-9 ftco-animate text-center fadeInUp ftco-animated">
+                    <h1 class="mb-2 bread RegisterH2">Expression Of Interest</h1>
+                    <p class="breadcrumbs">
+                        <span class="mr-2">
+                                <a routerLink="">
+                                    Home <i class="fas fa-angle-right"></i>
+                                </a>
+                        </span>
+                        <span>Expression Of Interest <i class="fas fa-angle-right"></i> </span>
+                    </p>
+             </div>
+        </div>
+    </div>
+</section>
+<div class="aside">
+
+</div>
+    <section class="s1 ">
+      
+            <div class="Expression-Of-Interest">
+              
+                  <div class="text-center">
+                    <i class="far fa-user"></i>
+                    <h1  class="text-center RegisterH">Expression Of Interest</h1>
+                  </div>
+                  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+     
+                <div class="row" >
+                    <div class="form-group col-lg-6">
+                    <label for="name" >Frist Name </label>
+                    <input type="text"  formControlName="firstName" placeholder="Frist Name" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" class="form-control" id="Frist name" name="name" >
+                    <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                      <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                  </div>
+                    </div>
+                    <div class="form-group col-lg-6">
+                    <!-- <label for="email" >Email </label>
+                    <input type="email" class="form-control" id="email" name="email" > -->
+                    <label for="name" >Last Name </label>
+                    <input type="text" formControlName="lastName" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" placeholder="Last Name" class="form-control" id="Last name" name="name" >
+                    <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                      <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                  </div>
+                    
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-lg-6">
+                    <label for="e-mail">E-mail </label>
+                    <input  formControlName="email" type="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"  placeholder="E-mail"  class="form-control" id="e-mail" name="e-mail">
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                      <div *ngIf="f.email.errors.required">Email is required</div>
+                      <div *ngIf="f.email.errors.email || f.email.errors.pattern">Email must be a valid email address</div>
+                    </div>
+                    </div>
+                    <div class="form-group col-lg-6">
+                      <label for="Country">Mobile Number </label>
+                      <input  formControlName="phone" type="phone" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }"  placeholder="Mobile Number"  class="form-control" id="phone" name="phone">
+                      <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                        <div *ngIf="f.phone.errors.required">Mobile Number  is required</div>
+                        <div *ngIf="f.phone.errors.pattern">Mobile Number  Must Be Only Numbers</div>
+                      </div>
+                      
+                  </div>
+                   
+                </div>
+         
+            
+                <div >
+                  <label for="Country">Number Of Children </label>
+                  <div class="row" >
+                      <div class="form-group col-lg-12">
+                        <select class="form-control" [ngClass]="{ 'is-invalid': submitted && f.numberChild.errors }"  id="numberChildren" formControlName="numberChild" (change)="numformgroupValdiation()" name="numberChild" aria-label="Default select example">
+                          <option value="" disabled selected hidden>Number Of Children</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                        </select>
+                        <div *ngIf="submitted && f.numberChild.errors" class="invalid-feedback">
+                          <div *ngIf="f.numberChild.errors.required">Enter Your Children</div>
+                        </div>
+
+                      </div>
+                  </div>
+              </div>
+                <div  *ngIf="checkNumberChilds == true">
+                  <div class="row  content-child" formArrayName="numberChildren">
+                <div class="col-md-5 infoStudent"  *ngFor="let item of numberChildren.controls let i = index;">
+                  <div [formGroupName]="i">
+                
+                  <h2 class="childHead text-center">Child {{i + 1}}</h2>
+                <div class="row">
+                    <div class="form-group col-lg-12">
+                    <label for="name">Student Frist Name </label>
+                    <input type="text" formControlName="student_name" [ngClass]="{ 'is-invalid': submitted && numberChildren.controls[i].get('student_name').errors?.required }"   placeholder="Student Frist Name"  class="form-control" id="student_name{{i}}" name="student_name{{i}}">
+                    <div *ngIf="submitted && numberChildren.controls[i].get('student_name').errors?.required" class="invalid-feedback">
+                      <div *ngIf="numberChildren.controls[i].get('student_name').errors?.required">Name is required</div>
+                     </div>
+                     
+                     
+                 
+                    </div>
+                   
+                </div>
+                <div class="row">
+                    <div class="form-group col-lg-12">
+                    <label for="name" >Academic Year </label>
+                    <select  (change)="courses($event,i)"    class="form-control" formControlName="year_id" [ngClass]="{ 'is-invalid': submitted && numberChildren.controls[i].get('year_id').errors?.required }"   id="year_id{{i}}"  aria-label="Default select example">
+                        <option value="" disabled selected hidden>Choose Year</option>
+                        <option value='{{item.name}}' id="{{item.id}}"  *ngFor="let item of yearData"   >{{item.name}}</option>
+                      </select>
+                      <div *ngIf="submitted && numberChildren.controls[i].get('year_id').errors?.required" class="invalid-feedback">
+                        <div *ngIf="numberChildren.controls[i].get('year_id').errors?.required">Academic Year is required</div>
+                       </div>
+                    </div>
+                    <div class="form-group col-lg-12">
+                    <!-- <label for="Subject" >Subject </label> -->
+                      <!-- <ng-multiselect-dropdown formControlName="courses" [ngClass]="{ 'is-invalid': submitted && numberChildren.controls[i].get('courses').errors?.required }"  class="checkBoxSelection" 
+                      [placeholder]="'Choose Subject'"
+                      [settings]="dropdownSettings3"
+                      [data]="Subject[i]"
+                      name="time"
+                      id="{{SubjectId[i]}}"
+                      >
+                      </ng-multiselect-dropdown> -->
+                       <mat-form-field style="width: 100%;" *ngIf="showCourse[i]==true" id="coursess{{i}}">
+                        <mat-label style="font-size: 1rem;">Subject</mat-label>
+                        <mat-select formControlName="courses" placeholder="Choose Subject" multiple [ngClass]="{ 'is-invalid': submitted && numberChildren.controls[i].get('courses').errors?.required }"  class="form-control" id="courses{{i}}"  name="courses" >
+                          <mat-option *ngFor="let item of Subject[i]" [value]="item.id">{{item.name}}</mat-option>
+                        </mat-select>
+                      </mat-form-field> 
+                      
+                     
+                 
+                      <div *ngIf="submitted && numberChildren.controls[i].get('courses').errors?.required" class="invalid-feedback">
+                        <div *ngIf="numberChildren.controls[i].get('courses').errors?.required">Name is required</div>
+                       </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-lg-12">
+                    <!-- <label for="name" >Preferred Days </label> -->
+                    <!-- <ng-multiselect-dropdown formControlName="preferedDays" [ngClass]="{ 'is-invalid': submitted && numberChildren.controls[i].get('preferedDays').errors?.required }"   class="checkBoxSelection" 
+                    [placeholder]="'Choose Day'"
+                    [settings]="dropdownSettings2"
+                    [data]="days"
+                    name="days"
+                    id="Day{{i}}"
+                    >
+                    </ng-multiselect-dropdown> -->
+                   
+                    <mat-form-field style="width: 100%;" id="preferedDays{{i}}">
+                      <mat-label style="font-size: 1rem;">Preferred Days </mat-label>
+                      <mat-select formControlName="preferedDays" placeholder="Choose Subject" multiple [ngClass]="{ 'is-invalid': submitted && numberChildren.controls[i].get('preferedDays').errors?.required }"  class="form-control" id="preferedDays{{i}}"  name="preferedDays" >
+                        <mat-option *ngFor="let item of days" [value]="item">{{item}}</mat-option>
+                      </mat-select>
+                    </mat-form-field> 
+                    <div *ngIf="submitted && numberChildren.controls[i].get('preferedDays').errors?.required" class="invalid-feedback">
+                      <div *ngIf="numberChildren.controls[i].get('preferedDays').errors?.required">preferedDays is required</div>
+                     </div>
+                   
+                    </div>
+                    <div class="form-group col-lg-12">
+                    <!-- <label for="name" >Preferred Time </label>
+                    <ng-multiselect-dropdown formControlName="preferedTimes" [ngClass]="{ 'is-invalid': submitted && numberChildren.controls[i].get('preferedTimes').errors?.required }"  class="checkBoxSelection" 
+                    [placeholder]="'Choose Time'"
+                    [settings]="dropdownSettings"
+                    [data]="time"
+                    name="time"
+                    id="time{{i}}"
+                    >
+                    </ng-multiselect-dropdown> -->
+                    <mat-form-field style="width: 100%;" id="preferedTimes{{i}}">
+                      <mat-label style="font-size: 1rem;">Preferred Time </mat-label>
+                      <mat-select formControlName="preferedTimes"  placeholder="Choose Subject" multiple [ngClass]="{ 'is-invalid': submitted && numberChildren.controls[i].get('preferedTimes').errors?.required }"  class="form-control" id="preferedTimes{{i}}"  name="preferedTimes" >
+                        <mat-option *ngFor="let item of time" [value]="item.id">{{item.time}}</mat-option>
+                      </mat-select>
+                    </mat-form-field> 
+                    <div *ngIf="submitted && numberChildren.controls[i].get('preferedTimes').errors?.required" class="invalid-feedback">
+                      <div *ngIf="numberChildren.controls[i].get('preferedTimes').errors?.required">preferedTimes is required</div>
+                     </div>
+                   
+                
+                    
+                    
+                    </div>
+                </div>
+               
+              </div>
+            </div>
+            </div>
+              </div>
+          
+                <div class="form-group">
+                  <label for="message">Comments </label>
+                  <textarea formControlName="comment"  class="form-control" rows="4" id="message" name="message"></textarea>
+                </div>
+                <div class="large-24 columns">
+                  <input type="checkbox"   class="politiqueConfidentialiteCheck" ><label class="politiqueConfidentialiteCheckLabel" for="rgpd-check-2-1">Subscribe To AVICENNA Academy comms</label>
+                    </div>
+                <div class="form-group text-center">
+                  <button class="btn start-project-btn text-white form-control"   type="submit"  style=" background-color: #5fcfdf">Send</button>
+                </div>
+             
+              </form>
+            </div>
+
+       
+         
+
+    </section>
+
+</article>
+

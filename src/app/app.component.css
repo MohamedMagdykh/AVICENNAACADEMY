@@ -1,0 +1,200 @@
+.navbar {
+  position: fixed;
+  background: #070c2c !important;
+  padding-top: 5px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.navbar .nameuser {
+  color: white;
+}
+
+.navbar .dropdown-menu {
+  width: 100%;
+}
+
+.navbar .dropdown-menu a {
+  padding: 0.7rem 1.5rem;
+}
+
+.navbar .dropdown-menu a:hover {
+  background: #5fcfdf;
+  color: white;
+}
+
+.navbar .login {
+  float: right;
+  background-color: #5fcfdf;
+  color: white;
+  border: none;
+  width: 115px;
+}
+
+.navbar .login:hover {
+  color: #5fcfdf;
+  background-color: white;
+}
+
+.navbar .active {
+  border-bottom: 5px #5fcfdf solid;
+}
+
+.float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 75px;
+  right: 5px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  -webkit-box-shadow: 2px 2px 3px #999;
+          box-shadow: 2px 2px 3px #999;
+  z-index: 100;
+}
+
+.float .my-float {
+  margin-top: 16px;
+}
+
+.footer-main {
+  background-size: cover;
+  background-color: #070c2c;
+}
+
+.footer-main h2 {
+  font-size: 22px;
+  font-weight: 500;
+  color: white;
+}
+
+.footer-main .text-white {
+  color: #a5a5a5 !important;
+}
+
+.footer-main .fas {
+  color: #5fcfdf !important;
+}
+
+.footer-main .hovertext:hover {
+  color: #5fcfdf !important;
+}
+
+.footer-main .contact-info li {
+  color: #F5F6F4 !important;
+  padding: .3rem 0rem;
+}
+
+.footer-main .contact-info .social-icons i {
+  font-size: 30px;
+  margin-right: 10px;
+  color: #F5F6F4;
+}
+
+.footer-main .nav-item {
+  font-size: 1rem;
+}
+
+.footer-main .nav-link {
+  display: block;
+  padding: .1rem 0rem;
+  color: #a5a5a5 !important;
+}
+
+.review-section {
+  background: #070c2c;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  margin-bottom: -1%;
+}
+
+.review-section .cover {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.review-section .input-group-append {
+  margin-left: -5px !important;
+  z-index: 1000;
+}
+
+.review-section .input-group-append button {
+  background-color: #5fcfdf !important;
+}
+
+.review-section .AtheerFooter {
+  color: #5fcfdf;
+  letter-spacing: 10px;
+  font-family: cursive;
+}
+
+.show-for-medium-up:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .navbar .navbar-collapse .MQNav-link {
+    font-size: 14px;
+  }
+  .navbar .navbar-collapse .login {
+    width: 75px;
+    font-size: 13px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .navbar .navbar-collapse .login {
+    margin-left: 0%;
+    margin-right: 5%;
+  }
+  .footer .visa {
+    width: 13% !important;
+  }
+  .footer .paypal {
+    width: 30% !important;
+    padding: 5% !important;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .navbar .navbar-collapse .login {
+    margin-left: 0%;
+    margin-right: 5%;
+  }
+  .footer .visa {
+    width: 13% !important;
+  }
+  .footer .paypal {
+    width: 30% !important;
+    padding: 5% !important;
+  }
+  .navbar-brand {
+    width: 40% !important;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .navbar .navbar-collapse .login {
+    margin-left: 0%;
+    margin-right: 5%;
+  }
+  .review-section h3 {
+    font-size: 22px !important;
+  }
+  .review-section form {
+    padding: 0% 5%;
+  }
+}
+/*# sourceMappingURL=app.component.css.map */

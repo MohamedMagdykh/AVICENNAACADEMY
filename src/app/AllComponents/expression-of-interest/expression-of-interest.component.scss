@@ -1,0 +1,212 @@
+.s1 {
+
+    h1
+    {
+     
+   
+        position: relative;
+        left: 0; 
+        right: 0;
+        color:#5fcfdf ;
+        font-weight: bold;
+        margin-bottom: 5%;
+
+
+    }
+    .order-2
+    {
+        position: absolute;
+        left: 9%;
+        top: 25%;
+
+    }
+    .Expression-Of-Interest
+     {
+        background-color: #ecececd1;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        padding: 50px;
+        border-radius: 31px;
+        width: 75% ;
+        margin-left: auto;
+        margin-right: auto;
+        .fa-user
+        {
+            font-size: 75px;
+            margin-bottom: 2%;
+            color: #5fcfdf;
+        }
+        .content-child
+        {
+            .childHead
+            {
+                width: 100%;
+                color: rgb(7, 12, 44);
+                font-weight: bold;
+                font-size: 1.5rem;
+                margin-bottom: 5%;
+            }
+            width: 100%;
+            margin-left: 4%;
+            .infoStudent
+            {
+                border: 2px solid #7070708a;
+               border-radius: 20px;
+               padding: 30px;
+               margin: 2%;
+            }
+
+        }
+     
+        
+         label
+          {
+            margin-left: 10px;
+            color: #707070;
+          }
+            .text-lightBlue 
+            {
+                color: #5fcfdf!important;
+            
+            }
+                .form-control
+                 {
+                    border-radius: 7px;
+                    background-color: #F5F6F4;
+                 }
+                    .start-project-btn
+                    {
+                        margin-top: 5%;
+                        width: 60%;
+                        height: 50px;
+                        &:hover
+                        {
+                            // color: #5fcfdf!important;
+                            // background: white !important;
+                            transform: scale(1.1);
+                        }
+                    }
+    }
+    
+}
+.aside
+{
+    width: 100%;
+    height: 20px;
+    background: #5fcfdf;
+    margin-bottom: 5%;
+}
+.hero-wrap
+ {
+  height: 300px;
+  width: 100%;
+  position: inherit;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+  .overlay 
+  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    opacity: .3;
+    background: rgb(7, 12, 44);
+  }
+  .slider-text 
+  {
+    height: 300px;
+    .breadcrumbs
+     {
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 1px;
+      span
+       {
+        color: #fff;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        a {
+          color: #fff;
+          }
+        }
+      }
+    }
+    .bread {
+      font-weight: 900;
+      color: #fff;
+      }
+ }
+ @media only screen and (min-width: 992px) and (max-width: 1199px)
+ {
+     
+ 
+ }
+ @media only screen and (min-width: 768px) and (max-width: 991px)
+ {
+     
+   
+ 
+ }
+ @media only screen and (max-width: 767px) 
+ {
+  .RegisterH2
+  {
+    
+    font-size: 1.8rem !important;
+    margin-bottom: 0% !important;
+  }
+  .Expression-Of-Interest
+  {
+    padding: 30px !important;
+    width: 85% !important;
+    .RegisterH
+    {
+  
+      font-size: 1.5rem !important;
+      margin-bottom: 18% !important;
+    }
+ 
+    .fa-user
+    {
+      font-size: 60px !important;
+  
+    }
+    .politiqueConfidentialiteCheckLabel
+    {
+      font-size: 0.5rem !important;
+
+    }
+   
+    .content-child
+    {
+      margin-left: 0% !important;
+      .infoStudent
+      {
+        padding: 20px !important;
+      }
+
+    }
+    
+
+    
+  }
+
+  
+ 
+ }    
+ @media only screen and (max-width: 450px) 
+ {
+     
+ }
+ mat-select span{
+  left: 10px;
+  top: 0;
+}
+.mat-form-field-label-wrapper
+{
+  left: 10px !important;
+  top: 0 !important;
+}

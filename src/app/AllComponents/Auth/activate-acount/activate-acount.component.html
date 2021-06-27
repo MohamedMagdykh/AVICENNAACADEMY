@@ -1,0 +1,84 @@
+
+
+<article class="content ">
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('../../../assets/aboutUs.jpg');">
+      <div class="overlay"></div>
+      <div class="container">
+              <div class="row no-gutters slider-text align-items-center justify-content-center">
+                <div class="col-md-9 ftco-animate text-center fadeInUp ftco-animated">
+                      <h1 class="mb-2 bread">Activation Account</h1>
+                      <p class="breadcrumbs">
+                          <span class="mr-2">
+                                  <a routerLink="">
+                                      Home <i class="fas fa-angle-right"></i>
+                                  </a>
+                          </span>
+                          <span>Activation Account <i class="fas fa-angle-right"></i> </span>
+                      </p>
+               </div>
+          </div>
+      </div>
+  </section>
+  <div class="aside">
+  
+  </div>
+      <section class="s1 ">
+       
+              <div class="login-card">
+              
+                    <div class="text-center">
+                      <h1  class="text-center">Activation Account</h1>
+                    </div>
+                  
+         
+                  <div class="row">
+                      <div class="form-group col-lg-12">
+                      <input   placeholder="Enter Your Activation Code" [(ngModel)]="code"   class="form-control" id="ActivateCode" name="ActivateCode">
+               
+                      </div>
+                     
+                  </div>
+               
+      
+               
+                  <div class="form-group text-center">
+                    <button class="btn start-project-btn text-white form-control " (click)="activaionAcount()"   style=" background-color: #5fcfdf">Activate</button>
+                  </div>
+                  <div class="row" [ngStyle]="{'padding-top.%':'5'}">
+                      <div    class="form-group col-md-6 col-sm-12 Forgotten" >
+                          
+                          <span aria-hidden="true" data-toggle="modal" data-target="#Resend">Resend Activation Code?</span>
+                      </div>
+               
+  
+                     
+                  </div>
+               
+        
+              </div>
+           
+  
+      </section>
+  
+  </article>
+  
+             <!-- //////////////////////////////////////resend code Model//////////////////// -->
+<div class="modal fade" id="Resend" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Resend Code</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        <h4 style="color: rgb(7, 12, 44);">Are You Sure You Want Resend Code </h4>      
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="closeResendCodeModel" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" style="background: #5fcfdf;border-color: #5fcfdf;" (click)="resendCode()"  >Resend Code </button>
+        </div>
+      </div>
+    </div>
+  </div> 

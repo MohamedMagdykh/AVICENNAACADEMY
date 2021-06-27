@@ -1,0 +1,452 @@
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<section class="s1">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-2 left-part ">
+                <div class="content setting text-center " routerLink="/Parent"  >
+                    <h5 >
+                        <i class="fas fa-user"></i>
+                        <span class="d-none d-sm-block">Profile</span>                     </h5> 
+    
+                  </div>  
+                  <div class="content setting text-center active"   >
+                    <h5 >
+                        <i class="fas fa-user"></i>
+                        <span class="d-none d-sm-block">Child Details</span>                     </h5> 
+    
+                  </div>  
+ 
+                
+                 <div class="content LogOut text-center" data-toggle="modal" data-target="#LogOut">
+                    <h5 >
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span  class="d-none d-sm-block">LogOut</span> 
+
+                     </h5>
+
+                 </div>
+                 
+
+                </div>
+        
+            <div class="col-10 right-part">
+            
+                <div class="student-profile py-4">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-lg-4">
+                          <div class="card" style="border: none;">
+                            <div class="card-header bg-transparent text-center" style="border: none;">
+                                <div class="changePhoto" style="position: relative;">
+                                  <div class="cover" data-toggle="modal" data-target="#ChangeProfilePhoto">
+                                    <span>Change</span>
+                                  </div>
+                                  <img *ngIf="children[0].avatar!=null && children[0].avatar!='null'" class="profile_img" src="{{ url+children[0].avatar}}" alt="instructor">
+                                  <img *ngIf="children[0].avatar==null || children[0].avatar=='null'" class="profile_img" src="../../../../../assets/no_user.jpg" alt="instructor">
+                                   </div>
+                              <div class="row name"  >
+                              <h3>{{children[0].first_name}}</h3>
+                              <i class="fas fa-edit" aria-hidden="true" (click)="showName()" data-toggle="modal" data-target="#ChangeUserName"></i> 
+                            </div>           
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-8">  
+                          <div class="card shadow-sm">
+                            <div class="card-header bg-transparent border-0">
+                              <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Child Information</h3>
+                            </div>
+                            <div class="card-body pt-0">
+                              <table class="table table-bordered">
+                                <tr>
+                                  <th width="30%">Year</th>
+                                  <td width="2%">:</td>
+                                  <td>{{children[0].year_id}}</td>
+                                </tr>
+                                <tr>
+                                  <th width="30%">E-mail</th>
+                                  <td width="2%">:</td>
+                                  <td>{{children[0].email}}</td>
+                                </tr>
+                                <tr>
+                                  <th width="30%">Phone</th>
+                                  <td width="2%">:</td>
+                                  <div class="col-12" style="border-bottom: 1px solid #dee2e6;">
+                                    <div class="row">
+                                  <td class="col-10" style="border: none;"> {{children[0].phone}} </td>
+                                  <i class="fas fa-edit col-2" style="text-align: center;
+                                  padding-top: 2%;" aria-hidden="true" data-toggle="modal" (click)="showPhone()" data-target="#ChangePhone"></i> 
+                                    </div>
+                                  </div>
+                                </tr>
+
+                                <tr>
+                                  <th width="30%">Address</th>
+                                  <td width="2%">:</td>
+                                  <div class="col-12" style="border-bottom: 1px solid #dee2e6;">
+                                  <div class="row" style="border-bottom: 1px solid #dee2e6;">
+                                    <td class="col-10" style="border: none;">{{children[0].address}} </td>  
+                                  <i class="fas fa-edit col-2" style="text-align: center;
+                                    padding-top: 2%;" aria-hidden="true" data-toggle="modal" (click)="showAdress()" data-target="#adress"></i>   
+                                  </div>
+                                </div>
+
+                                </tr>
+
+                                <tr>
+                                  <th width="30%">class</th>
+                                  <td width="2%">:</td>
+                                  <div class="row" style=" display: inline; margin-left: 1px;">
+                                    <!-- <span *ngIf="children.length != i+1"> --</span> -->
+                                    <span class="col-10" style="border: none;" *ngFor="let item2 of children[0].student_groups let i=index">{{item2.name}}</span>
+                                 
+                                  </div>
+                                </tr>
+                            
+                              </table>
+                            </div>
+                          </div>
+                            <div style="height: 26px"></div>
+                         
+                        </div>
+                      </div>
+                
+                    </div>
+                  </div>
+                  <h5 class="TimeTable">Time Table</h5>
+                  <select name="timezone_offset1" [(ngModel)]="valTimezone" (change)="Time_table()" style="margin-bottom: 20px; width: 50%;"  class="span5 form-control">
+                    <option value="{{item.key}}" *ngFor="let item of timezoneData | keyvalue">{{item.value}}</option>
+                    
+                </select>
+                  <div class="table-responsive">
+                      <table class="table table-bordered text-center">
+                          <thead>
+                              <tr class="bg-light-gray">
+                                  <th class="text-uppercase">Saturday</th>
+                                  <th class="text-uppercase">Sunday</th>
+                                  <th class="text-uppercase">Monday</th>
+                                  <th class="text-uppercase">Tuesday</th>
+                                  <th class="text-uppercase">Wednesday</th>
+                                  <th class="text-uppercase">Thursday</th>
+                                  <th class="text-uppercase">Friday</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <td style="position: relative;width: 14.2%; padding: 0;"  >
+                                  <ng-container *ngFor="let item of timeTableDate">
+                                  <div style="position: relative; 
+                                  padding: 10% 0%;
+                                  border-top: 1px solid #dee2e6;"  *ngIf="item.day == 'Saturday'"  >
+                                      <a  href="{{item.data.zoom_link}}"  *ngIf="item.data.zoom_link != null   || item.data.zoom_link != 'null'" style="position: absolute; right: 0;left: 0;top: 0;bottom: 0; background: rgba(0, 128, 0, 0.52);" ></a>
+                                      <span  class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16 xs-font-size13 ">{{item.data.course}}</span>
+              
+                                      <div class="margin-10px-top font-size13">{{item.data.from}} - {{item.data.to}}</div>
+                                      <div class="font-size13 text-light-gray d-none d-lg-block"> Class:{{item.data.group}}</div>
+                                      <div class="font-size13 text-light-gray d-block d-lg-none">{{item.data.group}}</div>
+                                      <!-- <div class="font-size13 text-light-gray">{{item.data.date}}</div> -->
+                                  </div> 
+                              </ng-container>
+                              </td>
+                              <td style="position: relative;width: 14.2%; padding: 0;"  >
+                                  <ng-container *ngFor="let item of timeTableDate">
+                                  <div style="position: relative; 
+                                  padding: 10% 0%;
+                                  border-top: 1px solid #dee2e6;"  *ngIf="item.day == 'Sunday'"  >
+                                      <a  href="{{item.data.zoom_link}}" *ngIf="item.data.zoom_link != null   || item.data.zoom_link != 'null'" style="position: absolute; right: 0;left: 0;top: 0;bottom: 0; background: rgba(0, 128, 0, 0.52);" ></a>
+               
+                                      <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16 xs-font-size13 ">{{item.data.course}}</span>
+              
+                                      <div class="margin-10px-top font-size13">{{item.data.from}} - {{item.data.to}}</div>
+                                      <div class="font-size13 text-light-gray d-none d-lg-block"> Class:{{item.data.group}}</div>
+                                      <div class="font-size13 text-light-gray d-block d-lg-none">{{item.data.group}}</div>
+                                      <!-- <div class="font-size13 text-light-gray">{{item.data.date}}</div> -->
+              
+                                  </div> 
+                              </ng-container>
+                              </td>
+                              <td style="position: relative;width: 14.2%; padding: 0;"  >
+                                  <ng-container *ngFor="let item of timeTableDate">
+                                  <div style="position: relative; 
+                                  padding: 10% 0%;
+                                  border-top: 1px solid #dee2e6;"  *ngIf="item.day == 'Monday'"  >
+                                      <a  href="{{item.data.zoom_link}}" *ngIf="item.data.zoom_link != null   || item.data.zoom_link != 'null'" style="position: absolute; right: 0;left: 0;top: 0;bottom: 0; background: rgba(0, 128, 0, 0.52);" ></a>
+               
+                                      <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16 xs-font-size13 ">{{item.data.course}}</span>
+              
+                                      <div class="margin-10px-top font-size13">{{item.data.from}} - {{item.data.to}}</div>
+                                      <div class="font-size13 text-light-gray d-none d-lg-block"> Class:{{item.data.group}}</div>
+                                      <div class="font-size13 text-light-gray d-block d-lg-none">{{item.data.group}}</div>
+                                      <!-- <div class="font-size13 text-light-gray">{{item.data.date}}</div> -->
+              
+                                  </div> 
+                              </ng-container>
+                              </td>
+                              <td style="position: relative;width: 14.2%; padding: 0;"  >
+                                  <ng-container *ngFor="let item of timeTableDate">
+                                  <div style="position: relative; 
+                                  padding: 10% 0%;
+                                  border-top: 1px solid #dee2e6;"  *ngIf="item.day == 'Tuesday'"  >
+                                      <a  href="{{item.data.zoom_link}}" *ngIf="item.data.zoom_link != null  || item.data.zoom_link != 'null'" style="position: absolute; right: 0;left: 0;top: 0;bottom: 0; background: rgba(0, 128, 0, 0.52);" ></a>
+               
+                                      <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16 xs-font-size13 ">{{item.data.course}}</span>
+              
+                                      <div class="margin-10px-top font-size13">{{item.data.from}} - {{item.data.to}}</div>
+                                      <div class="font-size13 text-light-gray d-none d-lg-block"> Class:{{item.data.group}}</div>
+                                      <div class="font-size13 text-light-gray d-block d-lg-none">{{item.data.group}}</div>
+                                       <!-- <div class="font-size13 text-light-gray">{{item.data.date}}</div> -->
+              
+                                  </div> 
+                              </ng-container>
+                              </td>
+                              <td style="position: relative;width: 14.2%; padding: 0;"  >
+                                  <ng-container *ngFor="let item of timeTableDate">
+                                  <div style="position: relative; 
+                                  padding: 10% 0%;
+                                  border-top: 1px solid #dee2e6;"  *ngIf="item.day == 'Wednesday'"  >
+                                      <a  href="{{item.data.zoom_link}}" *ngIf="item.data.zoom_link != null  || item.data.zoom_link != 'null'" style="position: absolute; right: 0;left: 0;top: 0;bottom: 0; background: rgba(0, 128, 0, 0.52);" ></a>
+               
+                                      <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16 xs-font-size13 ">{{item.data.course}}</span>
+              
+                                      <div class="margin-10px-top font-size13">{{item.data.from}} - {{item.data.to}}</div>
+                                      <div class="font-size13 text-light-gray d-none d-lg-block"> Class:{{item.data.group}}</div>
+                                      <div class="font-size13 text-light-gray d-block d-lg-none">{{item.data.group}}</div>
+                                      <!-- <div class="font-size13 text-light-gray">{{item.data.date}}</div> -->
+              
+                                  </div> 
+                              </ng-container>
+                              </td>
+                              <td style="position: relative;width: 14.2%; padding: 0;"  >
+                                  <ng-container *ngFor="let item of timeTableDate">
+                                  <div style="position: relative; 
+                                  padding: 10% 0%;
+                                  border-top: 1px solid #dee2e6;"  *ngIf="item.day == 'Thursday'"  >
+                                      <a  href="{{item.data.zoom_link}}" *ngIf="item.data.zoom_link != null   || item.data.zoom_link != 'null'" style="position: absolute; right: 0;left: 0;top: 0;bottom: 0; background: rgba(0, 128, 0, 0.52);" ></a>
+               
+                                      <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16 xs-font-size13 ">{{item.data.course}}</span>
+              
+                                      <div class="margin-10px-top font-size13">{{item.data.from}} - {{item.data.to}}</div>
+                                      <div class="font-size13 text-light-gray d-none d-lg-block"> Class:{{item.data.group}}</div>
+                                      <div class="font-size13 text-light-gray d-block d-lg-none">{{item.data.group}}</div>
+                                      <!-- <div class="font-size13 text-light-gray">{{item.data.date}}</div> -->
+              
+                                  </div> 
+                              </ng-container>
+                              </td>
+                              <td style="position: relative;width: 14.2%; padding: 0;"  >
+                                  <ng-container *ngFor="let item of timeTableDate">
+                                  <div style="position: relative; 
+                                  padding: 10% 0%;
+                                  border-top: 1px solid #dee2e6;"  *ngIf="item.day == 'Friday'"  >
+                                      <a  href="{{item.data.zoom_link}}" *ngIf="item.data.zoom_link != null || item.data.zoom_link != 'null'" style="position: absolute; right: 0;left: 0;top: 0;bottom: 0; background: rgba(0, 128, 0, 0.52);" ></a>
+               
+                                      <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16 xs-font-size13 ">{{item.data.course}}</span>
+              
+                                      <div class="margin-10px-top font-size13">{{item.data.from}} - {{item.data.to}}</div>
+                                      <div class="font-size13 text-light-gray d-none d-lg-block"> Class:{{item.data.group}}</div>
+                                      <div class="font-size13 text-light-gray d-block d-lg-none">{{item.data.group}}</div>
+                                      <!-- <div class="font-size13 text-light-gray">{{item.data.date}}</div> -->
+              
+                                  </div> 
+                              </ng-container>
+                              </td>
+              
+                              
+              
+                             
+                          </tbody>
+                    
+                      </table> 
+                  </div>
+            
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+ <!-- //////////////////////////////////////LogOut//////////////////// -->
+ <!-- //////////////////////////////////////LogOut//////////////////// -->
+ <form #LogOut="ngForm">
+  <div class="container" >
+    
+      <!-- Modal ForgetPassword -->
+      <div class="modal fade" id="LogOut" role="dialog" >
+        <div class="modal-dialog" style="margin-top: 20%;">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 style="color: rgb(7, 12, 44);">LogOut Message</h3>
+              <button type="button" class="close"  data-dismiss="modal">&times;</button>
+              
+             
+            </div>
+            <div class="modal-body">
+              <section>
+                  <div>
+                      <div class="container">
+                          <form role="form-inline">
+                              <div class="container">
+                                  <div class="row">
+                                      <h5 style="color: rgb(83, 83, 83);">Are You Sure Want LogOut</h5>
+                                  </div>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+              </section>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary"  data-dismiss="modal" >Cancel</button>
+              <button type="submit" class="btn btn-danger "data-dismiss="modal" (click)=" log_Out()" style="background: #5fcfdf;border-color: #5fcfdf;" >Ok</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+  
+    </div>
+  
+  </form>
+ <!-- //////////////////////////////////////change User Name Model//////////////////// -->
+
+ <div class="modal fade" id="ChangeUserName" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Change UserName</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="field">
+          <label for="text"> Frist Name</label>
+          <input class="form-control" [(ngModel)]="FristName"   type="text" placeholder="New Frist Name">
+        </div>
+              </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="UbdateName()" style="background: #5fcfdf;border-color: #5fcfdf;"  >Change</button>
+      </div>
+    </div>
+  </div>
+</div> 
+    
+    
+    
+       <!-- //////////////////////////////////////change Profile photo Model//////////////////// -->
+<div class="modal fade" id="ChangeProfilePhoto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Change Profile Photo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <label class="btn btn-default"> 
+            <input type="file" (change)="changeProfile($event)">
+            </label>
+             
+            <!-- <button class="btn btn-success" >Upload</button> -->
+              
+          <!-- <div *ngIf="currentFileUpload" class="progress">
+            <div class="progress-bar progress-bar-info progress-bar-striped"
+              role="progressbar" attr.aria-valuenow="{{percentage}}"
+              aria-valuemin="0" aria-valuemax="100"
+              [ngStyle]="{width:percentage+'%'}">
+              {{percentage}}%</div>
+          </div> -->
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" style="background: #5fcfdf;border-color: #5fcfdf;" *ngIf="bool" (click)="changePhoto()"  >Change</button>
+   
+      </div>
+    </div>
+  </div>
+</div>
+              <!-- //////////////////////////////////////change Adress Model//////////////////// -->
+
+  <div class="modal fade" id="adress" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Change Adress</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="field">
+            <label for="text"> Address</label>
+            <input class="form-control" [(ngModel)]="adress"   type="text" placeholder="New Address">
+          </div>
+             </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)=" UbdateAdress()" style="background: #5fcfdf;border-color: #5fcfdf;"  >Change</button>
+        </div>
+      </div>
+    </div>
+  </div> 
+      <!-- //////////////////////////////////////change Phone Model//////////////////// -->
+
+      <div class="modal fade" id="ChangePhone" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Change Phone</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="field">
+                <label for="text"> Phone</label>
+                <input class="form-control" [(ngModel)]="Phone"   type="text" placeholder="New Phone">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" (click)="UbdatePhone()" style="background: #5fcfdf;border-color: #5fcfdf;"  >Change</button>
+            </div>
+          </div>
+        </div>
+      </div> 
+            <!-- //////////////////////////////////////change Adress Model//////////////////// -->
+
+  <div class="modal fade" id="adress" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Change Adress</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="field">
+            <label for="text"> Address</label>
+            <input class="form-control" [(ngModel)]="adress"   type="text" placeholder="New Address">
+          </div>
+             </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)=" UbdateAdress()" style="background: #5fcfdf;border-color: #5fcfdf;"  >Change</button>
+        </div>
+      </div>
+    </div>
+  </div> 

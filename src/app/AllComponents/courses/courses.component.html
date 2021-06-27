@@ -1,0 +1,295 @@
+<section class="hero-wrap hero-wrap-2" style="background-image: url('../../../assets/aboutUs.jpg');">
+    <div class="overlay"></div>
+    <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
+              <div class="col-md-9 ftco-animate text-center fadeInUp ftco-animated">
+                    <h1 class="mb-2 bread" >Courses</h1>
+                    <p class="breadcrumbs">
+                        <span class="mr-2">
+                                <a routerLink="">
+                                    Home <i class="fas fa-angle-right"></i>
+                                </a>
+                        </span>
+                        <span>Courses <i class="fas fa-angle-right"></i> </span>
+                    </p>
+             </div>
+        </div>
+    </div>
+</section>
+<div class="aside"></div>
+    <div class="popular page_section">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="section_title text-center fadeInUp wow ftco-animated">
+                            
+                            <h1 style="text-align:center;font-weight: bold;color: rgb(7, 12, 44);">Our <span style="color: #5fcfdf;" >Courses</span></h1>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row course_boxes">
+
+                    <div class="col-lg-4 course_box ftco-animate  fadeInUp wow ftco-animated" *ngFor="let item of subjects">
+                        
+                        <div class="card"   >
+                            <!-- <div class="coverSelected" *ngIf="item.visable == false">
+                                <div class="select">Selected</div>
+                            </div> -->
+                            <div class="imgback" >
+                                <div class="cover"></div>
+                                <!-- <img class="card-img-top" src="{{item.photo}}" alt="Math"> -->
+                                <img class="card-img-top" *ngIf="item.photo != 'null' && item.photo != null" src="{{ url+item.photo}}" alt="{{item.name}}">
+
+                                <img class="card-img-top" *ngIf="item.photo == 'null' || item.photo == null" src="../../../assets/NoImageFound.jpg" alt="Math">
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="card-title" style="margin-bottom: 0rem;font-weight:bold;font-size: 1.2rem;">{{item.name}}</div>
+                                <br>
+                                <div class="card-title" style="margin-top: 0px;">Total Hours Of Course: {{item.hours}} h</div>
+                                <!-- <div class="card-text">{{item.describe}}</div> -->
+                            </div>
+                            <div class="course_price d-flex flex-column align-items-center justify-content-center"><span>${{item.net_value}}</span></div>
+                            
+                            <div class="price_box d-flex flex-row align-items-center">
+                                
+                                <div *ngIf="btnEnrollVisable == true" class="course_author_name" (click)="cardPackages(item.id)" data-toggle="modal" data-target="#Payment"><a  class="btn d-block btn-primary btn-outline-primary py-3">Enroll Now!</a></div>
+                                
+                               </div>
+                            </div>
+                            </div>
+                        </div>    
+                           
+           
+            </div>
+        </div>
+
+        <section id="labels">
+
+            <div class="container">
+              <h1 class="fadeInUp wow " style="text-align:center;font-weight: bold;color: rgb(7, 12, 44);">Our <span style="color: #5fcfdf;" >Offers</span></h1>
+              <div class="row">
+                  <div *ngFor="let item of offers" class=" col-md-6 offerMQ fadeInUp wow " style="padding: 10% 5% 10% 15%;">
+                    <div class="dl">
+                      <div class="brand">
+                          <h2 style="font-size: 1.5rem;">
+                            {{item.name}}
+                          </h2>
+                      </div>
+                      <div class="col-12">
+                        <div class="row">
+                          <div class="discount alizarin col-6">
+                            {{item.offer_precentage}}%
+                              <div class="type">
+                                  off
+                              </div>
+                          </div>
+                          <div class="priceeDiscount alizarin col-6">
+                            <del>
+                              <span class="amount type">${{item.net_value}}</span>
+                            </del>
+                            <br>
+                            <span style=" font-size: 18px;">After Discount</span>
+                            <br>
+                            ${{item.net_value_after_discount}}
+                             
+                            
+                          </div>
+
+                        </div>
+                     
+                    </div>
+                      <div class="descr">
+                          <strong>
+                              When you Select <span> {{item.courses_count}} Subject <br>
+                                ( <span *ngFor="let item2 of item.courses ; let i=index" style="font-size: 0.9rem;"> {{item2.name}}<span *ngIf="item?.courses.length != i+1"> + </span></span> )
+                              </span> 
+                          </strong> 
+                      </div>
+                      <div class="price_box d-flex flex-row align-items-center">
+                                
+                        <div *ngIf="btnEnrollVisable == true" class="course_author_name" (click)="cardOffers(item.id)" data-toggle="modal" data-target="#PaymentOffers"><a  class="btn d-block btn-primary btn-outline-primary py-3">Enroll Now!</a></div>
+                        
+                       </div>
+                   
+                    </div>
+                    
+                  </div>
+                  <!-- <div class=" col-md-6 offerMQ fadeInUp wow " style="padding: 10% 15% 10% 5%;">
+                    <div class="dl" >
+                      <div class="brand" >
+                          <h2>
+                            AVICENNA Offers
+                          </h2>
+                      </div>
+                      <div class="discount alizarin">
+                          10%
+                          <div class="type">
+                              off
+                          </div>
+                      </div>
+                      <div class="descr">
+                          <strong>
+                              When you Select 3 Subject Or More
+                          </strong> 
+                      </div>
+                
+                   
+                    </div>
+                  </div> -->
+               
+              </div>
+            </div>
+          </section>
+
+
+        <!-- //////////////////////////////////////Payment package Model/////////////////////////////////// -->
+        <form #Payment="ngForm" >
+            <div class="container">
+              
+                <!-- Modal ForgetPassword -->
+                <div class="modal fade" id="Payment" role="dialog" >
+                  <div class="modal-dialog" style="margin-top: 2%;">
+                  
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h3 style="color: rgb(7, 12, 44);">Course reservation</h3>
+                        <button type="button" class="close" #closebutton  data-dismiss="modal">&times;</button>
+                        
+                       
+                      </div>
+                      <div class="modal-body">
+                        <div class="checkout-inner">
+                            <div >
+                                <label for="Country">Choose  Your Child<span class="text-lightBlue">.</span></label>
+                                <div class="row" >
+                                    <div class="form-group col-lg-12">
+                                      <select class="form-control" [(ngModel)]="idStudent" name="numberChild" aria-label="Default select example">
+                                        <option disabled selected>Choose  Your Child</option>
+                                        <option value="{{item.id}}" *ngFor="let item of myStudents">{{item.first_name}}</option>
+                                  
+                                      
+                                      </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkout-summary">
+                                <h1 class="Cart-Total">Cart Total</h1>
+
+                                <h2 > Name<span id="Grandtotal" >{{subjectPackageSelect.name}} </span></h2>
+                                
+                                <h2 > Price<span id="Grandtotal" style="color: green;" >$&nbsp;{{subjectPackageSelect.net_value}} </span></h2>
+                              
+                            </div>
+                            <!-- <div class="checkout-summary">
+                              <h1 class="Cart-Total">Cart Total</h1>
+                              <div *ngFor="let item of subjectSelect">
+                                  <p class="sub-total">{{item.name}}<span style="width: 20%;" id="sub-total">{{item.price}} $ <button type="button" class="close"  (click)="addCard(item.id)">&times;</button></span> </p>
+
+                              </div>
+                              <h2 *ngIf="subjectSelect.length == 1">Total Price<span id="Grandtotal" >{{totalPriceShow}} &nbsp; $</span></h2>
+                              <div *ngIf="subjectSelect.length == 2">
+                              <h2 >Total Price <span id="Discount5%">{{totalPriceShow}} &nbsp; $</span></h2>
+                              <h3 style="color: red;margin-top: 5%;font-size: 24px;"> Discount 5 %</h3>
+                              </div>
+                              <div *ngIf="subjectSelect.length >= 3">
+                                  
+                              <h2 >Total Price <span id="Discount10%">{{totalPriceShow}}  &nbsp; $</span></h2>
+                              <h3 style="color: red;margin-top: 5%;font-size: 24px;"> Discount 10 %</h3>
+                              </div>
+                          </div> -->
+
+                     
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn anotherSubject" id="closePayment" data-dismiss="modal" >Cancel</button>
+                        <button type="submit" class="btn btn-danger "style="background: #5fcfdf;border-color: #5fcfdf;" (click)="check_out()"  >Payment</button>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+            
+              </div>
+            
+            </form>
+             <!-- //////////////////////////////////////Payment Offers Model/////////////////////////////////// -->
+        <form #PaymentOffers="ngForm" >
+          <div class="container">
+            
+              <!-- Modal ForgetPassword -->
+              <div class="modal fade" id="PaymentOffers" role="dialog" >
+                <div class="modal-dialog" style="margin-top: 2%;">
+                
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 style="color: rgb(7, 12, 44);">Course reservation</h3>
+                      <button type="button" class="close" #closebutton  data-dismiss="modal">&times;</button>
+                      
+                     
+                    </div>
+                    <div class="modal-body">
+                      <div class="checkout-inner">
+                          <div >
+                              <label for="Country">Choose  Your Child<span class="text-lightBlue">.</span></label>
+                              <div class="row" >
+                                  <div class="form-group col-lg-12">
+                                    <select class="form-control" [(ngModel)]="idStudent" name="numberChild" aria-label="Default select example">
+                                      <option  selected>Choose  Your Child</option>
+                                      <option value="{{item.id}}" *ngFor="let item of myStudents">{{item.first_name}}</option>
+                                
+                                    
+                                    </select>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="checkout-summary">
+                              <h1 class="Cart-Total">Cart Total</h1>
+                              <h2 style="color: red;" > Discount {{subjectOffersSelect.offer_precentage}} %</h2>
+                            
+                              <h2 > Name Offer<span id="Grandtotal" >{{subjectOffersSelect.name}} </span></h2>
+                              <!-- <h2 > Subjects : <span id="Grandtotal" *ngFor="let item of subjectOffersSelect.courses let i = index" >{{item.name}}<span *ngIf="item?.length != i+1"> - </span> </span></h2> -->
+                              <h2  > Subjects</h2>
+                              <div *ngFor="let item of subjectOffersSelect.courses let i = index">
+                                <p class="sub-total" style="border-top:none;margin-bottom: 0rem;">{{item.name}}</p>
+                            </div>
+                              
+                              <h2 > Price<span id="Grandtotal" style="color: green;" >$&nbsp;{{subjectOffersSelect.net_value_after_discount}} </span></h2>
+                            
+                          </div>
+                          <!-- <div class="checkout-summary">
+                            <h1 class="Cart-Total">Cart Total</h1>
+                            <div *ngFor="let item of subjectSelect">
+                                <p class="sub-total">{{item.name}}<span style="width: 20%;" id="sub-total">{{item.price}} $ <button type="button" class="close"  (click)="addCard(item.id)">&times;</button></span> </p>
+
+                            </div>
+                            <h2 *ngIf="subjectSelect.length == 1">Total Price<span id="Grandtotal" >{{totalPriceShow}} &nbsp; $</span></h2>
+                            <div *ngIf="subjectSelect.length == 2">
+                            <h2 >Total Price <span id="Discount5%">{{totalPriceShow}} &nbsp; $</span></h2>
+                            <h3 style="color: red;margin-top: 5%;font-size: 24px;"> Discount 5 %</h3>
+                            </div>
+                            <div *ngIf="subjectSelect.length >= 3">
+                                
+                            <h2 >Total Price <span id="Discount10%">{{totalPriceShow}}  &nbsp; $</span></h2>
+                            <h3 style="color: red;margin-top: 5%;font-size: 24px;"> Discount 10 %</h3>
+                            </div>
+                        </div> -->
+
+                   
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn anotherSubject" id="closePaymentOFFERS" data-dismiss="modal" >Cancel</button>
+                      <button type="submit" class="btn btn-danger "style="background: #5fcfdf;border-color: #5fcfdf;" (click)="check_out()"  >Payment</button>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+          
+            </div>
+          
+          </form>

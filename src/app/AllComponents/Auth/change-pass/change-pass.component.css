@@ -1,0 +1,109 @@
+.s1 {
+  overflow: hidden;
+  position: relative;
+}
+
+.s1 h1 {
+  position: relative;
+  margin-bottom: 8%;
+  left: 0;
+  right: 0;
+  color: #5fcfdf;
+  font-weight: bold;
+}
+
+.s1 .order-2 {
+  position: absolute;
+  left: 9%;
+  top: 25%;
+}
+
+.s1 .contact-us-card {
+  background-color: #ecececd1;
+  margin-top: 2%;
+  margin-bottom: 5%;
+  padding: 80px;
+  border-radius: 31px;
+  width: 55%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.s1 .contact-us-card .fa-user {
+  font-size: 75px;
+  margin-bottom: 0%;
+  color: #5fcfdf;
+}
+
+.s1 .contact-us-card .text-lightBlue {
+  color: #5fcfdf !important;
+}
+
+.s1 .contact-us-card .form-control {
+  border-radius: 7px;
+  background-color: #F5F6F4;
+}
+
+.s1 .contact-us-card .start-project-btn {
+  margin-top: 5%;
+  width: 50%;
+  height: 50px;
+}
+
+.s1 .contact-us-card .start-project-btn:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.aside {
+  width: 100%;
+  height: 20px;
+  background: #5fcfdf;
+  margin-bottom: 5%;
+}
+
+.hero-wrap {
+  height: 300px;
+  width: 100%;
+  position: inherit;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+}
+
+.hero-wrap .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: '';
+  opacity: .3;
+  background: #070c2c;
+}
+
+.hero-wrap .slider-text {
+  height: 300px;
+}
+
+.hero-wrap .slider-text .breadcrumbs {
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.hero-wrap .slider-text .breadcrumbs span {
+  color: #fff;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-wrap .slider-text .breadcrumbs span a {
+  color: #fff;
+}
+
+.hero-wrap .bread {
+  font-weight: 900;
+  color: #fff;
+}
+/*# sourceMappingURL=change-pass.component.css.map */

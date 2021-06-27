@@ -1,0 +1,175 @@
+
+<div class="container">
+    <div class="detailsStudent" style="overflow-x: auto;">
+        <h5 class="information">Student Details</h5>
+        <div style="width: 762px;">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Student Name</th>
+                    <th scope="col">Year</th>
+                    <th scope="col">Class Id</th>
+                    <th scope="col">Time Zone</th>
+                  </tr>
+                </thead>
+                <tbody> 
+                  <tr *ngFor="let item2 of studentInfo">
+                    <td>{{item2.first_name +" "+item2.last_name}}</td>
+                    <td>{{item2.year_id}}</td>
+                    <td><span *ngFor="let groups of item2.student_groups">{{groups.name}}</span></td>
+                    <td>
+                        <select name="timezone_offset1" [(ngModel)]="valTimezone" (change)="Time_table()"  class="span5 form-control">
+                        <option value="{{item.key}}" *ngFor="let item of timezoneData | keyvalue">{{item.value}}</option>
+                        
+                    </select>
+                    </td>
+                  </tr>
+             
+              
+                </tbody>
+              </table>
+        </div>
+   
+    </div>
+    
+    <h5 class="TimeTable">Time Table</h5>
+    <div class="table-responsive">
+        <table class="table table-bordered text-center">
+            <thead>
+                <tr class="bg-light-gray">
+                    <th class="text-uppercase">Saturday</th>
+                    <th class="text-uppercase">Sunday</th>
+                    <th class="text-uppercase">Monday</th>
+                    <th class="text-uppercase">Tuesday</th>
+                    <th class="text-uppercase">Wednesday</th>
+                    <th class="text-uppercase">Thursday</th>
+                    <th class="text-uppercase">Friday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <td style="position: relative;width: 14.2%; padding: 0;"  >
+                    <ng-container *ngFor="let item of timeTableDate">
+                    <div style="position: relative; 
+                    padding: 10% 0%;
+                    border-top: 1px solid #dee2e6;"  *ngIf="item.day == 'Saturday'"  >
+                        <a  href="{{item.data.zoom_link}}"  *ngIf="item.data.zoom_link != null   || item.data.zoom_link != 'null'" style="position: absolute; right: 0;left: 0;top: 0;bottom: 0; background: rgba(0, 128, 0, 0.52);" ></a>
+                        <span  class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16 xs-font-size13 ">{{item.data.course}}</span>
+
+                        <div class="margin-10px-top font-size13">{{item.data.from}} - {{item.data.to}}</div>
+                        <div class="font-size13 text-light-gray d-none d-lg-block"> Class:{{item.data.group}}</div>
+                        <div class="font-size13 text-light-gray d-block d-lg-none">{{item.data.group}}</div>
+                        <!-- <div class="font-size13 text-light-gray">{{item.data.date}}</div> -->
+                    </div> 
+                </ng-container>
+                </td>
+                <td style="position: relative;width: 14.2%; padding: 0;"  >
+                    <ng-container *ngFor="let item of timeTableDate">
+                    <div style="position: relative; 
+                    padding: 10% 0%;
+                    border-top: 1px solid #dee2e6;"  *ngIf="item.day == 'Sunday'"  >
+                        <a  href="{{item.data.zoom_link}}" *ngIf="item.data.zoom_link != null   || item.data.zoom_link != 'null'" style="position: absolute; right: 0;left: 0;top: 0;bottom: 0; background: rgba(0, 128, 0, 0.52);" ></a>
+ 
+                        <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16 xs-font-size13 ">{{item.data.course}}</span>
+
+                        <div class="margin-10px-top font-size13">{{item.data.from}} - {{item.data.to}}</div>
+                        <div class="font-size13 text-light-gray d-none d-lg-block"> Class:{{item.data.group}}</div>
+                        <div class="font-size13 text-light-gray d-block d-lg-none">{{item.data.group}}</div>
+                        <!-- <div class="font-size13 text-light-gray">{{item.data.date}}</div> -->
+
+                    </div> 
+                </ng-container>
+                </td>
+                <td style="position: relative;width: 14.2%; padding: 0;"  >
+                    <ng-container *ngFor="let item of timeTableDate">
+                    <div style="position: relative; 
+                    padding: 10% 0%;
+                    border-top: 1px solid #dee2e6;"  *ngIf="item.day == 'Monday'"  >
+                        <a  href="{{item.data.zoom_link}}" *ngIf="item.data.zoom_link != null   || item.data.zoom_link != 'null'" style="position: absolute; right: 0;left: 0;top: 0;bottom: 0; background: rgba(0, 128, 0, 0.52);" ></a>
+ 
+                        <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16 xs-font-size13 ">{{item.data.course}}</span>
+
+                        <div class="margin-10px-top font-size13">{{item.data.from}} - {{item.data.to}}</div>
+                        <div class="font-size13 text-light-gray d-none d-lg-block"> Class:{{item.data.group}}</div>
+                        <div class="font-size13 text-light-gray d-block d-lg-none">{{item.data.group}}</div>
+                        <!-- <div class="font-size13 text-light-gray">{{item.data.date}}</div> -->
+
+                    </div> 
+                </ng-container>
+                </td>
+                <td style="position: relative;width: 14.2%; padding: 0;"  >
+                    <ng-container *ngFor="let item of timeTableDate">
+                    <div style="position: relative; 
+                    padding: 10% 0%;
+                    border-top: 1px solid #dee2e6;"  *ngIf="item.day == 'Tuesday'"  >
+                        <a  href="{{item.data.zoom_link}}" *ngIf="item.data.zoom_link != null  || item.data.zoom_link != 'null'" style="position: absolute; right: 0;left: 0;top: 0;bottom: 0; background: rgba(0, 128, 0, 0.52);" ></a>
+ 
+                        <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16 xs-font-size13 ">{{item.data.course}}</span>
+
+                        <div class="margin-10px-top font-size13">{{item.data.from}} - {{item.data.to}}</div>
+                        <div class="font-size13 text-light-gray d-none d-lg-block"> Class:{{item.data.group}}</div>
+                        <div class="font-size13 text-light-gray d-block d-lg-none">{{item.data.group}}</div>
+                         <!-- <div class="font-size13 text-light-gray">{{item.data.date}}</div> -->
+
+                    </div> 
+                </ng-container>
+                </td>
+                <td style="position: relative;width: 14.2%; padding: 0;"  >
+                    <ng-container *ngFor="let item of timeTableDate">
+                    <div style="position: relative; 
+                    padding: 10% 0%;
+                    border-top: 1px solid #dee2e6;"  *ngIf="item.day == 'Wednesday'"  >
+                        <a  href="{{item.data.zoom_link}}" *ngIf="item.data.zoom_link != null  || item.data.zoom_link != 'null'" style="position: absolute; right: 0;left: 0;top: 0;bottom: 0; background: rgba(0, 128, 0, 0.52);" ></a>
+ 
+                        <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16 xs-font-size13 ">{{item.data.course}}</span>
+
+                        <div class="margin-10px-top font-size13">{{item.data.from}} - {{item.data.to}}</div>
+                        <div class="font-size13 text-light-gray d-none d-lg-block"> Class:{{item.data.group}}</div>
+                        <div class="font-size13 text-light-gray d-block d-lg-none">{{item.data.group}}</div>
+                        <!-- <div class="font-size13 text-light-gray">{{item.data.date}}</div> -->
+
+                    </div> 
+                </ng-container>
+                </td>
+                <td style="position: relative;width: 14.2%; padding: 0;"  >
+                    <ng-container *ngFor="let item of timeTableDate">
+                    <div style="position: relative; 
+                    padding: 10% 0%;
+                    border-top: 1px solid #dee2e6;"  *ngIf="item.day == 'Thursday'"  >
+                        <a  href="{{item.data.zoom_link}}" *ngIf="item.data.zoom_link != null   || item.data.zoom_link != 'null'" style="position: absolute; right: 0;left: 0;top: 0;bottom: 0; background: rgba(0, 128, 0, 0.52);" ></a>
+ 
+                        <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16 xs-font-size13 ">{{item.data.course}}</span>
+
+                        <div class="margin-10px-top font-size13">{{item.data.from}} - {{item.data.to}}</div>
+                        <div class="font-size13 text-light-gray d-none d-lg-block"> Class:{{item.data.group}}</div>
+                        <div class="font-size13 text-light-gray d-block d-lg-none">{{item.data.group}}</div>
+                        <!-- <div class="font-size13 text-light-gray">{{item.data.date}}</div> -->
+
+                    </div> 
+                </ng-container>
+                </td>
+                <td style="position: relative;width: 14.2%; padding: 0;"  >
+                    <ng-container *ngFor="let item of timeTableDate">
+                    <div style="position: relative; 
+                    padding: 10% 0%;
+                    border-top: 1px solid #dee2e6;"  *ngIf="item.day == 'Friday'"  >
+                        <a  href="{{item.data.zoom_link}}" *ngIf="item.data.zoom_link != null || item.data.zoom_link != 'null'" style="position: absolute; right: 0;left: 0;top: 0;bottom: 0; background: rgba(0, 128, 0, 0.52);" ></a>
+ 
+                        <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16 xs-font-size13 ">{{item.data.course}}</span>
+
+                        <div class="margin-10px-top font-size13">{{item.data.from}} - {{item.data.to}}</div>
+                        <div class="font-size13 text-light-gray d-none d-lg-block"> Class:{{item.data.group}}</div>
+                        <div class="font-size13 text-light-gray d-block d-lg-none">{{item.data.group}}</div>
+                        <!-- <div class="font-size13 text-light-gray">{{item.data.date}}</div> -->
+
+                    </div> 
+                </ng-container>
+                </td>
+
+                
+
+               
+            </tbody>
+      
+        </table> 
+    </div>
+</div>

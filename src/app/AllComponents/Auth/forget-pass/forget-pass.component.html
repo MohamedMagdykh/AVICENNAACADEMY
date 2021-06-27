@@ -1,0 +1,58 @@
+
+<article class="content ">
+  <section class="hero-wrap hero-wrap-2" style="background-image: url('../../../assets/aboutUs.jpg');">
+    <div class="overlay"></div>
+    <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
+              <div class="col-md-9 ftco-animate text-center fadeInUp ftco-animated">
+                    <h1 class="mb-2 bread">Forgotten Password</h1>
+                    <p class="breadcrumbs">
+                        <span class="mr-2">
+                                <a routerLink="">
+                                    Home <i class="fas fa-angle-right"></i>
+                                </a>
+                        </span>
+                        <span>Forgotten Password <i class="fas fa-angle-right"></i> </span>
+                    </p>
+             </div>
+        </div>
+    </div>
+</section>
+<div class="aside">
+
+</div>
+    <section class="s1 ">
+     
+            <div class="forget-pass">
+              <form class="text-center" >
+                  <div class="text-center">
+                    <i class="far fa-user"></i>
+                    <h1  class="text-center">Forgotten Password</h1>
+                  </div>
+                
+       
+                <div class="row">
+                    <div class="form-group col-lg-12 text-center">
+                    <input type="email" [(ngModel)]="mail"  [ngStyle]="{'width.%':'80' , 'margin-left':'auto','margin-right': 'auto'}"  placeholder="Please enter your email address"  class="form-control" id="e-mail" name="e-mail">
+                    </div>
+                   
+                </div>
+           
+                <div class="row ">
+                    <div class="form-group col-6">
+                        <button class="btn start-project-btn btn-cancel  btn-danger " style="margin-left: 50%;" routerLink="/login"  >Cancel</button>
+                      </div>
+                    <div class="form-group col-6">
+                      <button class="btn start-project-btn text-white btn-send btn-danger form-control" (click)="forgettpasss()"  style=" background-color: #5fcfdf;margin-right: 50%;border-color: #5fcfdf;">Send</button>
+                    </div>
+                </div>
+           
+             
+              </form>
+            </div>
+         
+
+    </section>
+
+</article>
+

@@ -1,0 +1,12 @@
+<ng-container *ngIf="link.length!=0">
+<div style="padding-left: 10%;" *ngFor="let item of link" >
+  
+   <a href="{{item.link}}" style="cursor: pointer;" target="_blank"><img src="../../../../../assets/play.png" ></a>
+   <div style="text-align: center;
+   font-size: 1.5rem;
+   font-weight: bold;">Click On Play</div> 
+</div>
+</ng-container>
+<div style="padding-left: 10%;" *ngIf="link.length==0" >
+    <img src="../../../../../assets/novideo.png" >
+</div>

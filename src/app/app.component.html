@@ -1,0 +1,208 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.3.0//animate.css" rel="stylesheet" >
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco_navbar ftco-navbar-light" id="ftco-navbar">
+      <div class="container d-flex align-items-center" [ngStyle]="{'width.%': '100','max-width.%': '95'}" >
+           <a class="navbar-brand" [ngStyle]="{'width.%': '20'}">  <img [ngStyle]="{'width.%': '100','background-size': 'cover','background-repeat': 'no-repeat'}" class="logo" src="../assets/logo.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span> 
+          </button>
+          
+          <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto" [ngStyle]="{'margin-right': 'auto'}">
+                <li class="nav-item" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation" data-target="#ftco-nav"   data-toggle="collapse" ><a  [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="nav-link MQNav-link">Home</a></li>
+                <li class="nav-item " aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation" data-target="#ftco-nav"   data-toggle="collapse" ><a  [routerLink]="['AboutUs']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="nav-link MQNav-link">About Us</a></li>
+                <li class="nav-item" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation" data-target="#ftco-nav"   data-toggle="collapse" ><a [routerLink]="['ExpressionOfInterest']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  class="nav-link MQNav-link">Expression Of Interest</a></li>
+                <li class="nav-item" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation" data-target="#ftco-nav"   data-toggle="collapse" ><a  [routerLink]="['Course']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  class="nav-link MQNav-link">Courses & Pricing</a></li>
+                <li class="nav-item" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation" data-target="#ftco-nav"   data-toggle="collapse" ><a  class="nav-link MQNav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" [routerLink]="['contactUs']">Contact Us</a></li>
+                <!-- <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Profiles
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation" data-target="#ftco-nav"   data-toggle="collapse"  class="dropdown-item" [routerLink]="['/student/LessonsChild']" >Student</a>
+                    <a  aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation" data-target="#ftco-nav"   data-toggle="collapse" class="dropdown-item" [routerLink]="['/instructor/LessonsInstructor']">Instructor</a>
+                    <a aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation" data-target="#ftco-nav"   data-toggle="collapse"  class="dropdown-item"[routerLink]="['Parent']">Parent</a>
+                    <div class="dropdown-divider"></div>
+                    <a  aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation" data-target="#ftco-nav"   data-toggle="collapse" class="dropdown-item">LogOut</a>
+                   
+                  </div>
+                </li> -->
+            </ul>
+            <button *ngIf="checkLog =='false' ||checkLog == null || checkLog =='null' ||tkn == null || tkn =='null' " aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation" data-target="#ftco-nav"   data-toggle="collapse"  class="btn login my-2 my-sm-0 form-control " [routerLink]="['login']">
+              Login
+            </button>
+            <button *ngIf="checkLog =='false' || checkLog == null || checkLog =='null' ||tkn == null || tkn =='null'" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation" data-target="#ftco-nav"   data-toggle="collapse"  class="btn login my-2 my-sm-0 form-control " style="margin-left: 2%;" [routerLink]="['register']">
+              Register
+            </button>
+            <li class="nav-item dropdown" style="color: rgb(7, 12, 44);line-height: 10px;" *ngIf="checkLog =='true' && tkn != null && tkn !='null' ">
+              <h5 class="nav-link nameuser dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{NameUser}}
+              </h5>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a aria-controls="ftco-nav" *ngIf="typeUser =='student'"  aria-expanded="false" aria-label="Toggle navigation" data-target="#ftco-nav"   data-toggle="collapse"  class="dropdown-item" [routerLink]="['/student/LessonsChild']" >Student</a>
+                <a  aria-controls="ftco-nav" *ngIf="typeUser =='instructor'"  aria-expanded="false" aria-label="Toggle navigation" data-target="#ftco-nav"   data-toggle="collapse" class="dropdown-item" [routerLink]="['/instructor/LessonsInstructor']">Instructor</a>
+                <a aria-controls="ftco-nav" *ngIf="typeUser =='parent'"  aria-expanded="false" aria-label="Toggle navigation" data-target="#ftco-nav"   data-toggle="collapse"  class="dropdown-item"[routerLink]="['Parent']">Parent</a>
+                <div class="dropdown-divider"></div>
+                <a  aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation" data-target="#ftco-nav"   data-toggle="collapse" (click)="log_Out()" class="dropdown-item">LogOut</a>
+               
+              </div>
+            </li>
+
+          </div>
+      </div>
+  </nav> 
+
+
+<a href="https://api.whatsapp.com/send?phone=+20123456789&amp;text=مرحبا" class="float" target="_blank">
+  <i class="fab fa-whatsapp my-float"></i>
+ </a>
+ <!-- <a style="
+position: fixed;
+width: 57px;
+height: 57px;
+bottom: 7px;" href="tel:+010123456789" class="float" target="_blank">
+<i class="fas fa-phone-alt my-float"></i>
+</a> -->
+<router-outlet></router-outlet>
+
+<footer id="footer" class="footer">
+  <div class="review-section py-5">
+    <div class="cover"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-6 order-2 order-lg-1" style="margin: auto;width: 60%;">
+          <table class="w-100 h-100">
+            <tbody><tr>
+              <td>
+                <h3 class="text-white text-center font-weight-bold mb-3" >Give us Your Review </h3>
+                <form >
+                 <div class="input-group mb-3">
+                    <input type="email" name="email" class="form-control" [(ngModel)]="this.message"  placeholder="Review...">
+                    <div class="input-group-append">
+                      <button class="btn start-project-btn  text-white" (click)="addParentSay()"  data-localize="Subscribe" type="submit">Review Now</button>  
+                    </div>
+                  </div>
+                </form>
+              </td>
+            </tr>
+          </tbody></table>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  <div class="footer-main">
+    <div class="container" style="padding-left: 0;">
+      <div class="row py-5">
+        <div class="col-12 col-lg-3">
+          <table class="h-100 mx-auto">
+            <tbody><tr>
+              <td>
+                <img src="../assets/logo.png" alt="" style="background-size: 100% 100%; width: 100%;">
+              </td>
+            </tr>
+          </tbody></table>
+        </div>
+        <div class="col-12 col-lg-3 mt-4 mt-lg-0">
+          <div class="contact-info text-center text-lg-left">
+            <h2 class="ftco-heading-2">Have a Questions?</h2>
+            <ul class="nav flex-column">
+              <li class="nav-item" >
+                <span class="mr-2"><i class="fas fa-map-marker-alt" aria-hidden="true" ></i></span> <span class="text-white"  >Area, City - Country</span>
+              </li>
+              <li class="nav-item"  >
+                <span class="mr-2"><i class="fas fa-phone-alt" aria-hidden="true"></i></span><span class="text-white">+20123456789</span>
+              </li>
+            
+              
+              <li class="nav-item">
+                <span class="mr-2"><i class="fas fa-envelope" aria-hidden="true"></i></span><span class="text-white">	info@yourdomain.com </span>
+              </li>
+            
+            </ul>
+          </div>
+        </div>
+        <div class="col-12 col-lg-3 mt-3 mt-lg-0 text-center text-lg-left">
+          <h2 class="ftco-heading-2">Links</h2>
+          <ul class="nav flex-column">
+            <li class="nav-item active">
+              <a class="nav-link hovertext" [routerLink]="['']" >Home                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hovertext " [routerLink]="['AboutUs']"   >About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hovertext " [routerLink]="['ExpressionOfInterest']"  >Expression Of Interest</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hovertext" [routerLink]="['Course']" >Courses & Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hovertext " [routerLink]="['contactUs']"  >Contact Us</a>
+            </li>
+       
+
+          </ul>
+        </div>
+        <div class="col-12 col-lg-3 mt-4 mt-lg-0 text-center text-lg-left">
+          <div class="contact-info ">
+          <h2 class="ftco-heading-2">Connect With Us</h2>
+
+          <ul class="nav flex-column ">
+          <li class="nav-item social-icons">
+            <a target="_blank" rel="nofollow noopener" role="link"><i class="fab fa-twitter hovertext" aria-hidden="true"></i></a>
+            <a  target="_blank" rel="nofollow noopener"  role="link"><i class="fab fa-facebook hovertext" aria-hidden="true"></i></a>
+            <a  target="_blank" rel="nofollow noopener" role="link"><i class="fab fa-linkedin hovertext" aria-hidden="true"></i></a>
+          </li>
+          </ul>
+        </div>
+        <div class="contact-info ">
+          <h2 class="ftco-heading-2" style="margin-top: 20px;margin-bottom: -10px;">Payment</h2>
+
+          <ul class="nav flex-column ">
+
+          <li class="nav-item social-icons">
+            <img src="../assets/visa.png" class="visa" style="width: 25%;" alt="">
+            <img src="../assets/paypal.png" class="paypal" style="width: 50%;padding: 5%;" alt="">
+     
+          </li>
+          </ul>
+        </div>
+          
+          
+       
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+</footer>
+      <!-- //////////////////////////////////////Activation User Model////////////////////
+<button style="display: none;" id="ActivationAcountbtn" aria-hidden="true" data-toggle="modal" data-target="#ActivationAcount"></button>
+      <div class="modal fade" id="ActivationAcount" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Activation Acount</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <input class="form-control" [(ngModel)]="activiationCode" type="text" placeholder="Enter Activation Code From Mail">
+            
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary"  style="background: #5fcfdf;border-color: #5fcfdf;"  >Resend Code </button>
+
+              <button type="button" class="btn btn-primary" (click)="activaionAcount()" n style="background: #5fcfdf;border-color: #5fcfdf;"  >Activat</button>
+            </div>
+          </div>
+        </div>
+      </div>  -->
+

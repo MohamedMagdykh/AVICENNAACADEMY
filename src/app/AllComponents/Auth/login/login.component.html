@@ -1,0 +1,79 @@
+
+<article class="content ">
+  <section class="hero-wrap hero-wrap-2" style="background-image: url('../../../assets/aboutUs.jpg');">
+    <div class="overlay"></div>
+    <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
+              <div class="col-md-9 ftco-animate text-center fadeInUp ftco-animated">
+                    <h1 class="mb-2 bread">Log In</h1>
+                    <p class="breadcrumbs">
+                        <span class="mr-2">
+                                <a routerLink="">
+                                    Home <i class="fas fa-angle-right"></i>
+                                </a>
+                        </span>
+                        <span>Log In <i class="fas fa-angle-right"></i> </span>
+                    </p>
+             </div>
+        </div>
+    </div>
+</section>
+<div class="aside">
+
+</div>
+    <section class="s1 ">
+     
+            <div class="login-card">
+              <form class="text-center" [formGroup]="loginForm" (ngSubmit)="Loginform()"  >
+                  <div class="text-center">
+                    <i class="far fa-user"></i>
+                    <h1  class="text-center">Log In</h1>
+                  </div>
+                
+       
+                <div class="row">
+                    <div class="form-group col-lg-12">
+                    <input type="email"  placeholder="Your E-mail"  formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"  class="form-control" id="e-mail" name="e-mail">
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback text-center">
+                      <div *ngIf="f.email.errors.required" style="text-align: left;">please Enter Your Mail</div>
+                      <div *ngIf="f.email.errors.email || f.email.errors.pattern" style="text-align: left;">Format Mail You Enterd Not Correct</div>
+                  </div> 
+                    </div>
+                   
+                </div>
+                <div class="row">
+                    <div class="form-group col-lg-12">
+                    <input type="password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"  placeholder="Your Password"  class="form-control" id="password" name="password">
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback text-center">
+                      <div *ngIf="f.password.errors.required" style="text-align: left;">Please Enter Your Password</div>
+                      <div *ngIf="f.password.errors.minlength" style="text-align: left;">Your Password Minlength 8 Digits</div>
+                  </div>
+                    </div>
+                   
+                </div>
+    
+             
+                <div class="form-group text-center">
+                  <button class="btn start-project-btn text-white form-control "  style=" background-color: #5fcfdf">Login</button>
+                </div>
+                <div class="row" [ngStyle]="{'padding-top.%':'5'}">
+                    <div    class="form-group col-md-6 col-sm-12 Forgotten" >
+                        
+                        <span routerLink="/forgetPass" >Forgot Your password?</span>
+                    </div>
+                    <div class="form-group col-md-6 col-sm-12 create" routerLink="/register"> 
+
+                        <span >Create New Account</span>
+                    </div>
+
+                   
+                </div>
+             
+              </form>
+            </div>
+         
+
+    </section>
+
+</article>
+

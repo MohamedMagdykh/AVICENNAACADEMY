@@ -1,0 +1,84 @@
+<article class="content ">
+
+  <section class="hero-wrap hero-wrap-2" style="background-image: url('../../../assets/aboutUs.jpg');">
+    <div class="overlay"></div>
+    <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
+              <div class="col-md-9 ftco-animate text-center fadeInUp ftco-animated">
+                    <h1 class="mb-2 bread">Contact Us</h1>
+                    <p class="breadcrumbs">
+                        <span class="mr-2">
+                                <a routerLink="">
+                                    Home <i class="fas fa-angle-right"></i>
+                                </a>
+                        </span>
+                        <span>Contact Us <i class="fas fa-angle-right"></i> </span>
+                    </p>
+             </div>
+        </div>
+    </div>
+</section>
+<div class="aside">
+
+</div>
+    <section class="s1 text-center">
+       
+        
+        
+            <div class="contact-us-card">
+              <h1 >Contact Us</h1>
+              <form  [formGroup]="contactform" (ngSubmit)="contactUS()">
+                <input type="hidden" > 
+                <div class="row">
+                    <div class="form-group col-lg-6">
+                    <label for="name" >Name</label>
+                    <input type="text" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }"  class="form-control" id="name" name="name" >
+                    <div *ngIf="submitted && f.name.errors" class="invalid-feedback text-center">
+                      <div *ngIf="f.name.errors.required" class="linePosition">Please Enter Name</div>
+                  </div>
+                    </div>
+                    <div class="form-group col-lg-6">
+                    <label for="email" >Email</label>
+                    <input type="email" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" class="form-control" id="email" name="email" >
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback text-center">
+                      <div *ngIf="f.email.errors.required" class="linePosition">Please Enter email</div>
+                      <div *ngIf="f.email.errors.email || f.email.errors.pattern">Format Mail You Enterd Not Correct</div>
+
+                  </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-lg-6">
+                    <label for="phone">Mobile Number</label>
+                    <input type="tel" formControlName="phone"   [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" class="form-control" id="phone" name="phone">
+                    <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                      <div *ngIf="f.phone.errors.required">Please Enter Mobile Number</div>
+                      <div *ngIf="f.phone.errors.pattern">Mobile Number  Must Be Only Numbers</div>
+                    </div>
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label >Subject</label>
+                        <input  class="form-control" formControlName="subject" [ngClass]="{ 'is-invalid': submitted && f.subject.errors }"  id="Address" name="phone">
+                        <div *ngIf="submitted && f.subject.errors" class="invalid-feedback text-center">
+                          <div *ngIf="f.subject.errors.required" class="linePosition">Please Enter subject About Message</div>
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group" style="padding: 0% 20%;">
+                  <label for="message">Message</label>
+                  <textarea class="form-control" rows="4" formControlName="message" [ngClass]="{ 'is-invalid': submitted && f.message.errors }"  id="message" name="message"></textarea>
+                  <div *ngIf="submitted && f.message.errors" class="invalid-feedback text-center">
+                    <div *ngIf="f.message.errors.required" class="linePosition">Please Enter Message</div>
+                </div>
+                </div>
+                <div class="form-group text-center">
+                  <button class="btn start-project-btn text-white form-control"  style=" background-color: #5fcfdf;">Send</button>
+                </div>
+             
+              </form>
+            </div>
+         
+
+    </section>
+
+</article>

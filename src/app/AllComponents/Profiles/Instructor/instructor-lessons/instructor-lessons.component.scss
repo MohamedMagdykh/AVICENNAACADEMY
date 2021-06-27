@@ -1,0 +1,213 @@
+
+    .table-responsive
+    {
+        box-shadow: 2px 2px 12px 3px #ccc;
+        border-radius: 30px;
+
+
+    }
+    td
+    {
+        cursor: pointer;
+    }
+    .detailsInstructor
+    {
+        box-shadow: 2px 2px 12px 3px #ccc;
+        border-radius: 30px;
+        margin-bottom: 1%;
+        padding: 2%;
+        .information
+        {
+            padding: 1%;
+            text-align: center;
+        }
+    }
+    .TimeTable
+    {
+        box-shadow: 2px 2px 12px 3px #ccc;
+        padding: 1%;
+        text-align: center;
+        margin-top: 5%;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 30px;
+        margin-bottom: 2%;
+     
+        
+    }
+    body {
+        margin-top: 20px;
+    }
+    .bg-light-gray {
+        background-color: #f7f7f7;
+    }
+    .table-bordered {
+        thead {
+            td {
+                border-bottom-width: 2px;
+            }
+            th {
+                border-bottom-width: 2px;
+            }
+        }
+        td {
+            border: 1px solid #dee2e6;
+            border: 1px solid #dee2e6;
+        }
+        th {
+            border: 1px solid #dee2e6;
+            border: 1px solid #dee2e6;
+        }
+    }
+    .table {
+        thead {
+            th {
+                vertical-align: bottom;
+                border-bottom: 2px solid #dee2e6;
+            }
+        }
+        td {
+            padding: .75rem;
+            vertical-align: top;
+            border-top: 1px solid #dee2e6;
+        }
+        th {
+            padding: .75rem;
+            vertical-align: top;
+            border-top: 1px solid #dee2e6;
+        }
+    }
+    .bg-sky.box-shadow {
+        box-shadow: 0px 5px 0px 0px #00a2a7;
+    }
+    .bg-orange.box-shadow {
+        box-shadow: 0px 5px 0px 0px #af4305;
+    }
+    .bg-green.box-shadow {
+        box-shadow: 0px 5px 0px 0px #4ca520;
+    }
+    .bg-yellow.box-shadow {
+        box-shadow: 0px 5px 0px 0px #dcbf02;
+    }
+    .bg-pink.box-shadow {
+        box-shadow: 0px 5px 0px 0px #e82d8b;
+    }
+    .bg-purple.box-shadow {
+        box-shadow: 0px 5px 0px 0px #8343e8;
+    }
+    .bg-lightred.box-shadow {
+        box-shadow: 0px 5px 0px 0px #d84213;
+    }
+    .bg-sky {
+        background-color: #02c2c7;
+    }
+    .bg-orange {
+        background-color: #e95601;
+    }
+    .bg-green {
+        background-color: #5bbd2a;
+    }
+    .bg-yellow {
+        background-color: #f0d001;
+    }
+    .bg-pink {
+        background-color: #ff48a4;
+    }
+    .bg-purple {
+        background-color: #9d60ff;
+    }
+    .bg-lightred {
+        background-color: #ff5722;
+    }
+    .padding-15px-lr {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .padding-5px-tb {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .margin-10px-bottom {
+        margin-bottom: 10px;
+    }
+    .border-radius-5 {
+        border-radius: 5px;
+    }
+    .margin-10px-top {
+        margin-top: 10px;
+    }
+    .font-size14 {
+        font-size: 14px;
+    }
+    .text-light-gray {
+        color: #d6d5d5;
+    }
+    .font-size13 {
+        font-size: 13px;
+    }
+    @media only screen and (min-width: 992px) and (max-width: 1199px)
+    {
+      
+        
+        .font-size13
+        {
+            font-size: 10px !important;
+
+        }
+    
+        
+    
+    }
+    @media only screen and (min-width: 768px) and (max-width: 991px)
+    {
+        
+        .NotAttending
+        {
+            font-size: 0.7rem;
+        }
+    
+    }
+    @media only screen and (max-width: 767px) 
+    {
+        .container
+        {
+            padding-top: 7% !important;
+
+        }
+        .NotAttending
+        {
+            font-size: 0.5rem;
+        }
+     
+    
+    }    
+    @media only screen and (max-width: 450px) 
+    {
+       
+        .container
+        {
+            padding-top: 14% !important;
+
+        }
+        .NotAttending
+        {
+            font-size: 0.5rem;
+        }
+    }
+    .NotAttending{
+        background: red;
+        color: white;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+       font-size: 0.8rem;
+       position: relative;
+        // right: 10%;
+        // left: 10%;
+       
+        // bottom:10px;
+        
+    }
+    
+

@@ -1,0 +1,282 @@
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="student-profile py-4">
+    <div class="container">
+      <div class="row" *ngFor="let item of instrucationInfo">
+        <div class="col-lg-4">
+          <div class="card" style="border: none;">
+            <div class="card-header bg-transparent text-center" style="border: none;">
+                <div class="changePhoto" style="position: relative;">
+                  <div class="cover" data-toggle="modal" data-target="#ChangeProfilePhoto">
+                    <span>Change</span>
+                  </div>
+                    <img *ngIf="item.avatar!=null && item.avatar!='null'" class="profile_img" src="{{ url+item.avatar}}" alt="instructor">
+                    <img *ngIf="item.avatar==null || item.avatar=='null'" class="profile_img" src="../../../../../assets/no_user.jpg" alt="instructor">
+
+                </div>
+                
+                
+              <div class="row name"  >
+              <h3>{{item?.first_name +" "+item?.last_name}}</h3>
+              <i class="fas fa-edit" aria-hidden="true" data-toggle="modal" (click)="showName()" data-target="#ChangeUserName"></i> 
+            </div>           
+
+            </div>
+        
+          </div>
+        </div>
+        <div class="col-lg-8">  
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+              <h3 class="mb-0"><i class="far fa-clone pr-1"></i>General Details</h3>
+            </div>
+            <div class="card-body pt-0">
+              <table class="table table-bordered">
+                <tr>
+                  <th width="30%">User Type</th>
+                  <td width="2%">:</td>
+                  <td>{{item?.role_passport}}</td>
+                </tr>
+                <tr>
+                  <th width="30%">Subjects</th>
+                  <td width="2%">:</td>
+                  <div class="col-12">
+                    <div class="row">
+                      <td class="col-10" style="border: none;" *ngFor="let item2 of item?.courses let i=index">{{item2.course.name}} <span *ngIf="item?.courses.length != i+1">-</span></td>
+                      <i class="fas fa-edit col-2" style="text-align: center;
+                      padding-top: 2%;" aria-hidden="true" data-toggle="modal" (click)="get_Courses()" data-target="#ChangeSubject"></i> 
+                    </div>
+
+                  </div>
+                
+           
+
+                </tr>
+                <tr>
+                  <th width="30%">E-mail</th>
+                  <td width="2%">:</td>
+                  <td>{{item?.email}}</td>
+                </tr>
+                <tr>
+                  <th width="30%">Phone</th>
+                  <td width="2%">:</td>
+                  <div class="col-12" style="border-bottom: 1px solid #dee2e6;">
+                    <div class="row">
+                  <td class="col-10" style="border: none;"> {{item?.phone}} </td>
+                  <i class="fas fa-edit col-2" style="text-align: center;
+                  padding-top: 2%;" aria-hidden="true" data-toggle="modal" (click)="showPhone()" data-target="#ChangePhone"></i> 
+                    </div>
+                  </div>
+                </tr>
+                <tr>
+                  <th width="30%">Address</th>
+                  <td width="2%">:</td>
+                  <div class="col-12">
+                  <div class="row">
+                    <td class="col-10" style="border: none;">{{item?.address}} </td>                  <i class="fas fa-edit col-2" style="text-align: center;
+                    padding-top: 2%;" aria-hidden="true" data-toggle="modal" (click)="showAdress()" data-target="#adress"></i>   
+                  </div>
+                </div>
+               
+                </tr>
+            
+              </table>
+            </div>
+           
+          </div>
+        
+            <div style="height: 26px"></div>
+            <form [formGroup]="changePassForm" (ngSubmit)="changePassform()" >
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+              <h3 class="mb-0" ><i class="fas fa-unlock"></i> Password Change</h3>
+            </div>
+            <div class="row">
+              <div class="form-group col-lg-12 ">
+              <input type="password" formControlName="oldPass" [ngClass]="{ 'is-invalid': submitted && f.oldPass.errors }"   placeholder="Old Password"  class="form-control OldPass" id="OldPass" name="OldPass">
+              <div *ngIf="submitted && f.oldPass.errors" class="invalid-feedback ">
+                <div *ngIf="f.oldPass.errors.required">Please Enter Your Old Password</div>
+            </div>
+              </div>
+             
+          </div>
+         
+          <div  class="row" >
+            <div class="form-group col-lg-6">
+            <input type="password" formControlName="newpassword" [ngClass]="{ 'is-invalid': submitted && f.newpassword.errors }"  placeholder="new password" class="form-control" id="newpassword" name="newpassword">
+            <div *ngIf="submitted && f.newpassword.errors" class="invalid-feedback ">
+              <div *ngIf="f.newpassword.errors.required">Please Enter Your New Password</div>
+              <div *ngIf="f.newpassword.errors.minlength">Your new password Minlength 8 Digits</div>
+              <div *ngIf="f.newpassword.errors.mustMatch">new password do not match</div>
+          </div>
+            </div>
+            <div class="form-group col-lg-6">
+                <input  type="password" formControlName="confirmNewPassword" [ngClass]="{ 'is-invalid': submitted && f.confirmNewPassword.errors }" placeholder="Confirm New Password" class="form-control" id="ConfirmNewPass" name="ConfirmNewPass">
+                <div *ngIf="submitted && f.confirmNewPassword.errors" class="invalid-feedback ">
+                  <div *ngIf="f.confirmNewPassword.errors.required">Please Enter Your confirm New Password</div>
+                  <div *ngIf="f.confirmNewPassword.errors.minlength">Your confirm New Password Minlength 8 Digits</div>
+                  <div *ngIf="f.confirmNewPassword.errors.mustMatch">Passwords do not match</div>
+              </div>
+                </div>
+        </div>
+        
+        <button class="updateBtn form-control">Change</button>
+          </div>
+         
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <!-- //////////////////////////////////////change Adress Model//////////////////// -->
+
+      <div class="modal fade" id="adress" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Change Adress</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="field">
+                <label for="text"> Address</label>
+                <input class="form-control" [(ngModel)]="adress"   type="text" placeholder="New Address">
+              </div>
+                 </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" (click)=" UbdateAdress()" style="background: #5fcfdf;border-color: #5fcfdf;"  >Change</button>
+            </div>
+          </div>
+        </div>
+      </div> 
+
+      <!-- //////////////////////////////////////change User Name Model//////////////////// -->
+
+  <div class="modal fade" id="ChangeUserName" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Change UserName</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="field">
+            <label for="text"> Frist Name</label>
+            <input class="form-control" [(ngModel)]="FristName"   type="text" placeholder="New Frist Name">
+          </div>
+          <div class="field">
+            <label for="text"> Last Name</label>
+            <input class="form-control" [(ngModel)]="LastName"   type="text" placeholder="New Last Name">
+          </div>        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="UbdateName()" style="background: #5fcfdf;border-color: #5fcfdf;"  >Change</button>
+        </div>
+      </div>
+    </div>
+  </div> 
+       <!-- //////////////////////////////////////change Phone Model//////////////////// -->
+
+       <div class="modal fade" id="ChangePhone" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Change Phone</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="field">
+                <label for="text"> Phone</label>
+                <input class="form-control" [(ngModel)]="Phone"   type="text" placeholder="New Phone">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" (click)="UbdatePhone()" style="background: #5fcfdf;border-color: #5fcfdf;"  >Change</button>
+            </div>
+          </div>
+        </div>
+      </div> 
+
+    <!-- //////////////////////////////////////change Subject Model//////////////////// -->
+
+    <div class="modal fade" id="ChangeSubject" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Change Subject</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <select [(ngModel)]="coursesChoosen" class="form-select form-control"  aria-label="Default select example">
+              <option disabled selected>Open this select menu</option>
+              <option value="{{item.id}}" *ngFor="let item of courses" >{{item.name}}</option>
+             
+            </select>
+            <!-- <mat-form-field style="width: 100%;" >
+              <mat-label style="font-size: 1rem;">Subjects </mat-label>
+              <mat-select  [(ngModel)]="coursesChoosen"  placeholder="Choose Subject" multiple  class="form-control"  name="preferedTimes" >
+                <mat-option style="z-index: 9999999;position: relative;" *ngFor="let item of courses" [value]="item.id">{{item.name}}</mat-option>
+              </mat-select>
+            </mat-form-field>  -->
+            <!-- <ng-multiselect-dropdown   [(ngModel)]="coursesChoosen" class="checkBoxSelection" 
+            [placeholder]="'Choose Subject'"
+            [settings]="dropdownSettings"
+            [data]="coursesName"
+            name="course"
+            id="course"
+            >
+            </ng-multiselect-dropdown>  -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" (click)="UpdateCourse()" style="background: #5fcfdf;border-color: #5fcfdf;"  >Change</button>
+          </div>
+        </div>
+      </div>
+    </div> 
+
+    <!-- //////////////////////////////////////change Profile photo Model//////////////////// -->
+    <div class="modal fade" id="ChangeProfilePhoto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Change Profile Photo</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <label class="btn btn-default"> 
+                <input type="file" (change)="changeProfile($event)">
+                </label>
+                 
+                <!-- <button class="btn btn-success" >Upload</button> -->
+                  
+              <!-- <div *ngIf="currentFileUpload" class="progress">
+                <div class="progress-bar progress-bar-info progress-bar-striped"
+                  role="progressbar" attr.aria-valuenow="{{percentage}}"
+                  aria-valuemin="0" aria-valuemax="100"
+                  [ngStyle]="{width:percentage+'%'}">
+                  {{percentage}}%</div>
+              </div> -->
+          </div>
+          <div class="modal-footer">
+            
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" style="background: #5fcfdf;border-color: #5fcfdf;" *ngIf="bool" (click)="changePhoto()"  >Change</button>
+       
+          </div>
+        </div>
+      </div>
+    </div>

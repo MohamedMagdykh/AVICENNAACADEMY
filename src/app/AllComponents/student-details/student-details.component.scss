@@ -1,0 +1,564 @@
+
+
+   .children
+   {
+	   box-shadow: 2px 2px 12px 3px #ccc;
+	   border-radius: 30px;
+	   margin-bottom: 1%;
+	   padding: 2%;
+	   text-align: center; 
+	   margin-top: 2%;
+	   margin-bottom: 8%;
+	   width: 100%;
+	   margin-right: auto;
+       margin-left: auto;
+                        
+	
+   }
+.s1
+{
+    .right-part
+{
+    padding: 10%;
+    margin-left: 16.666667%;
+}
+    .left-part
+    {
+        position: fixed;
+        top:0;
+        bottom:0;
+        background:rgb(7, 12, 44) ;
+        padding-top: 6%;
+        margin-top: 2%;
+        
+        .active
+        {
+            width: 100%;
+            background: #5fcfdf;
+            color: white !important;
+            outline:0px !important;
+    
+        }
+        .content
+        {
+            
+            color: rgb(189, 189, 189);
+            cursor: pointer;
+
+        }
+        h5
+        {
+            padding: 5%;
+         
+            .fas
+            {
+                margin-right: 1%;
+            }
+            
+        }
+       
+        .LogOut
+        {
+            bottom: 10%;
+            position: absolute;
+            left: 0;
+            right: 0;
+    
+        }
+    }
+
+  
+    
+
+}
+
+
+.student-profile {
+    border-radius: 10px;
+	.card {
+		border-radius: 30px;
+		padding: 2%;
+        .card-header {
+			.profile_img {
+				width: 150px;
+				height: 150px;
+				object-fit: cover;
+				margin: 10px auto;
+				border: 10px solid #ccc;
+				border-radius: 50%;
+			}
+		}
+		h3 {
+			font-size: 20px;
+			font-weight: 700;
+		}
+        p {
+			font-size: 16px;
+			color: #000;
+		}
+	}
+    .table {
+		th {
+			font-size: 14px;
+			padding: 5px 10px;
+			color: #000;
+		}
+		td {
+			font-size: 14px;
+			padding: 5px 10px;
+			color: #000;
+		}
+	}
+}
+
+
+
+#NewPass
+{
+	max-width: 38%;
+	margin-right: 2%;
+	margin-left: auto;
+
+}
+#ConNewPass
+{  
+	max-width: 38%;
+	margin-left: 2%;
+	margin-right: auto;
+}
+.OldPass
+{
+	width:80%;
+	margin-left:auto ;
+	margin-right: auto ;
+}
+.name
+{
+	 .fa-edit
+	{
+		position: absolute;
+		right: 2%;
+	}
+	h3
+	{
+		width: 100%;
+	}
+	position: relative;
+
+}
+	
+	.changePhoto
+	{
+		 .cover
+		{
+			position: absolute;
+			width: 150px;
+			height: 150px;
+			object-fit: cover;
+			margin: 10px auto;
+			border-radius: 50%;
+			left: 0;
+			right: 0;
+			cursor: pointer;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			&:hover
+			{
+				background: rgba(7, 12, 45, 0.53);
+				span
+				{
+					display: inline-block !important;
+
+
+				}
+			}
+			span
+			{
+				display: none;
+				font-size: 25px;
+				color: white;
+				
+			}
+		}
+
+	}
+	@media only screen and (min-width: 992px) and (max-width: 1199px)
+	{
+		.sec-children
+		{
+			
+			.profile_img
+			{
+				width: 120px !important;
+				height: 120px !important;
+			}
+			.card-header
+			{
+				padding: 0% !important;
+				
+			
+			}
+			.card-body 
+			{
+				padding: 1rem !important;
+
+			}
+
+		}
+	
+		
+	
+	}
+	@media only screen and (min-width: 768px) and (max-width: 991px)
+	{
+		.name
+         {
+	  		.fa-edit
+			{
+				
+				right: 26%;
+			}
+		}
+		.sec-children
+		{
+			padding: 15% !important;
+			.profile_img
+			{
+				width: 170px !important;
+				height: 170px !important;
+			}
+			.card
+			{
+				margin-bottom: 5% !important;
+			}
+	
+
+		}
+		
+	  
+	
+	}
+	@media only screen and (max-width: 767px) 
+	{
+		.s1
+		{
+		 .left-part
+		 {
+			 padding-top: 12% !important;
+ 
+		 }
+		 .right-part
+		 {
+			 padding: 12% 1%;
+			
+		 }
+		 #NewPass
+		 {
+			 max-width: 80%;
+			 margin-right: auto;
+			 margin-left: auto;
+		 
+		 }
+		 #ConNewPass
+		 {  
+			 max-width: 80%;
+			 margin-right: auto;
+			 margin-left: auto;
+			 margin-top: 4%;
+			 
+		 }
+		 .name
+         {
+	  		.fa-edit
+			{
+				
+				right: 24%;
+			}
+		}
+	}
+	.sec-children
+	{
+		padding: 15% !important;
+	
+		.card
+		{
+			margin-bottom: 5% !important;
+		}
+
+
+	}
+	
+	 
+	
+	}    
+	@media only screen and (max-width: 450px) 
+	{
+		.s1
+		{
+		 .left-part
+		 {
+			 padding-top: 16% !important;
+	
+		 }
+		 .name
+         {
+	  		.fa-edit
+			{
+				
+				right: 10%;
+			}
+		}
+		.sec-children
+		{
+			
+			.profile_img
+			{
+				width: 120px !important;
+				height: 120px !important;
+			}
+			.card-header
+			{
+				padding: 0% !important;
+				
+			
+			}
+			.card-body 
+			{
+				padding: 1rem !important;
+
+			}
+
+		}
+	
+	
+		}  
+		#ConNewPass
+		{  
+			max-width: 80%;
+			margin-right: auto;
+			margin-left: auto;
+			margin-top: 6% !important;
+			
+		}
+		
+	}
+	.profile_img{
+		object-fit: contain !important;
+		cursor:pointer;
+	}
+
+    .table-responsive
+    {
+        box-shadow: 2px 2px 12px 3px #ccc;
+        border-radius: 30px;
+
+
+    }
+    td
+    {
+        cursor: pointer;
+    }
+    .detailsInstructor
+    {
+        box-shadow: 2px 2px 12px 3px #ccc;
+        border-radius: 30px;
+        margin-bottom: 1%;
+        padding: 2%;
+        .information
+        {
+            padding: 1%;
+            text-align: center;
+        }
+    }
+    .TimeTable
+    {
+        box-shadow: 2px 2px 12px 3px #ccc;
+        padding: 1%;
+        text-align: center;
+        margin-top: 5%;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 30px;
+        margin-bottom: 2%;
+     
+        
+    }
+    body {
+        margin-top: 20px;
+    }
+    .bg-light-gray {
+        background-color: #f7f7f7;
+    }
+    .table-bordered {
+        thead {
+            td {
+                border-bottom-width: 2px;
+            }
+            th {
+                border-bottom-width: 2px;
+            }
+        }
+        td {
+            border: 1px solid #dee2e6;
+            border: 1px solid #dee2e6;
+        }
+        th {
+            border: 1px solid #dee2e6;
+            border: 1px solid #dee2e6;
+        }
+    }
+    .table {
+        thead {
+            th {
+                vertical-align: bottom;
+                border-bottom: 2px solid #dee2e6;
+            }
+        }
+        td {
+            padding: .75rem;
+            vertical-align: top;
+            border-top: 1px solid #dee2e6;
+        }
+        th {
+            padding: .75rem;
+            vertical-align: top;
+            border-top: 1px solid #dee2e6;
+        }
+    }
+    .bg-sky.box-shadow {
+        box-shadow: 0px 5px 0px 0px #00a2a7;
+    }
+    .bg-orange.box-shadow {
+        box-shadow: 0px 5px 0px 0px #af4305;
+    }
+    .bg-green.box-shadow {
+        box-shadow: 0px 5px 0px 0px #4ca520;
+    }
+    .bg-yellow.box-shadow {
+        box-shadow: 0px 5px 0px 0px #dcbf02;
+    }
+    .bg-pink.box-shadow {
+        box-shadow: 0px 5px 0px 0px #e82d8b;
+    }
+    .bg-purple.box-shadow {
+        box-shadow: 0px 5px 0px 0px #8343e8;
+    }
+    .bg-lightred.box-shadow {
+        box-shadow: 0px 5px 0px 0px #d84213;
+    }
+    .bg-sky {
+        background-color: #02c2c7;
+    }
+    .bg-orange {
+        background-color: #e95601;
+    }
+    .bg-green {
+        background-color: #5bbd2a;
+    }
+    .bg-yellow {
+        background-color: #f0d001;
+    }
+    .bg-pink {
+        background-color: #ff48a4;
+    }
+    .bg-purple {
+        background-color: #9d60ff;
+    }
+    .bg-lightred {
+        background-color: #ff5722;
+    }
+    .padding-15px-lr {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .padding-5px-tb {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .margin-10px-bottom {
+        margin-bottom: 10px;
+    }
+    .border-radius-5 {
+        border-radius: 5px;
+    }
+    .margin-10px-top {
+        margin-top: 10px;
+    }
+    .font-size14 {
+        font-size: 14px;
+    }
+    .text-light-gray {
+        color: #d6d5d5;
+    }
+    .font-size13 {
+        font-size: 13px;
+    }
+    @media only screen and (min-width: 992px) and (max-width: 1199px)
+    {
+      
+        
+        .font-size13
+        {
+            font-size: 10px !important;
+
+        }
+    
+        
+    
+    }
+    @media only screen and (min-width: 768px) and (max-width: 991px)
+    {
+        
+        .NotAttending
+        {
+            font-size: 0.7rem;
+        }
+    
+    }
+    @media only screen and (max-width: 767px) 
+    {
+        .container
+        {
+            padding-top: 7% !important;
+
+        }
+        .NotAttending
+        {
+            font-size: 0.5rem;
+        }
+     
+    
+    }    
+    @media only screen and (max-width: 450px) 
+    {
+       
+        .container
+        {
+            padding-top: 14% !important;
+
+        }
+        .NotAttending
+        {
+            font-size: 0.5rem;
+        }
+    }
+    .NotAttending{
+        background: red;
+        color: white;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+       font-size: 0.8rem;
+       position: relative;
+        // right: 10%;
+        // left: 10%;
+       
+        // bottom:10px;
+        
+    }
+	.fa-edit
+	{
+		padding-bottom: 2%;
+	}

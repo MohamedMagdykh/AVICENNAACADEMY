@@ -1,0 +1,166 @@
+.s1 h1 {
+  position: relative;
+  left: 0;
+  right: 0;
+  color: #5fcfdf;
+  font-weight: bold;
+  margin-bottom: 5%;
+}
+
+.s1 .order-2 {
+  position: absolute;
+  left: 9%;
+  top: 25%;
+}
+
+.s1 .Expression-Of-Interest {
+  background-color: #ecececd1;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding: 50px;
+  border-radius: 31px;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.s1 .Expression-Of-Interest .fa-user {
+  font-size: 75px;
+  margin-bottom: 2%;
+  color: #5fcfdf;
+}
+
+.s1 .Expression-Of-Interest .content-child {
+  width: 100%;
+  margin-left: 4%;
+}
+
+.s1 .Expression-Of-Interest .content-child .childHead {
+  width: 100%;
+  color: #070c2c;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 5%;
+}
+
+.s1 .Expression-Of-Interest .content-child .infoStudent {
+  border: 2px solid #7070708a;
+  border-radius: 20px;
+  padding: 30px;
+  margin: 2%;
+}
+
+.s1 .Expression-Of-Interest label {
+  margin-left: 10px;
+  color: #707070;
+}
+
+.s1 .Expression-Of-Interest .text-lightBlue {
+  color: #5fcfdf !important;
+}
+
+.s1 .Expression-Of-Interest .form-control {
+  border-radius: 7px;
+  background-color: #F5F6F4;
+}
+
+.s1 .Expression-Of-Interest .start-project-btn {
+  margin-top: 5%;
+  width: 60%;
+  height: 50px;
+}
+
+.s1 .Expression-Of-Interest .start-project-btn:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.aside {
+  width: 100%;
+  height: 20px;
+  background: #5fcfdf;
+  margin-bottom: 5%;
+}
+
+.hero-wrap {
+  height: 300px;
+  width: 100%;
+  position: inherit;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+}
+
+.hero-wrap .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: '';
+  opacity: .3;
+  background: #070c2c;
+}
+
+.hero-wrap .slider-text {
+  height: 300px;
+}
+
+.hero-wrap .slider-text .breadcrumbs {
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.hero-wrap .slider-text .breadcrumbs span {
+  color: #fff;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-wrap .slider-text .breadcrumbs span a {
+  color: #fff;
+}
+
+.hero-wrap .bread {
+  font-weight: 900;
+  color: #fff;
+}
+
+@media only screen and (max-width: 767px) {
+  .RegisterH2 {
+    font-size: 1.8rem !important;
+    margin-bottom: 0% !important;
+  }
+  .Expression-Of-Interest {
+    padding: 30px !important;
+    width: 85% !important;
+  }
+  .Expression-Of-Interest .RegisterH {
+    font-size: 1.5rem !important;
+    margin-bottom: 18% !important;
+  }
+  .Expression-Of-Interest .fa-user {
+    font-size: 60px !important;
+  }
+  .Expression-Of-Interest .politiqueConfidentialiteCheckLabel {
+    font-size: 0.5rem !important;
+  }
+  .Expression-Of-Interest .content-child {
+    margin-left: 0% !important;
+  }
+  .Expression-Of-Interest .content-child .infoStudent {
+    padding: 20px !important;
+  }
+}
+
+mat-select span {
+  left: 10px;
+  top: 0;
+}
+
+.mat-form-field-label-wrapper {
+  left: 10px !important;
+  top: 0 !important;
+}
+/*# sourceMappingURL=expression-of-interest.component.css.map */

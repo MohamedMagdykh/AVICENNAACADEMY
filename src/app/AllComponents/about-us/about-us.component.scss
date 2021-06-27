@@ -1,0 +1,477 @@
+.aside
+{
+    width: 100%;
+    height: 20px;
+    background: #5fcfdf;
+    margin-bottom: 5%;
+}
+.hero-wrap
+ {
+  height: 300px;
+  width: 100%;
+  position: inherit;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+  .overlay 
+  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    opacity: .3;
+    background: rgb(7, 12, 44);
+  }
+  .slider-text 
+  {
+    height: 300px;
+    .breadcrumbs
+     {
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 1px;
+      span
+       {
+        color: #fff;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        a {
+          color: #fff;
+          }
+        }
+      }
+    }
+    .bread {
+      font-weight: 900;
+      color: #fff;
+      }
+ }
+.s2
+{
+  padding: 0% 20%;
+  position: relative;
+  .vc_column_container
+  {
+    margin-bottom: 5%;
+  }
+  .vc_column-inner
+  {
+    border: 1px solid #bfbfbf;
+    height: 100%;
+    border-radius: 18px;
+    padding: 60px 40px 40px !important;
+    transition: all 0.5s ease;
+    box-shadow: 2px 2px 12px 3px #ccc;
+    
+    &:hover
+    {
+      transform: scale(1.1);
+     
+    }
+    h3 {
+      font-size: 26px !important;
+      line-height: 36px;
+      }
+      p
+      {
+        margin-bottom: 30px;
+        font-family: 'Roboto', sans-serif !important;
+        font-size: 18px;
+        line-height: 30px;
+        color: #333;
+        font-weight: 300;
+        text-align: justify;
+        
+      }
+
+  }
+}
+.ftco-intro 
+{
+  background-image: url('../../../assets/teacherStudents.jpeg');
+  background-attachment: fixed;
+  // background-position: 50% -84px;
+  padding: 8em 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  position: relative;
+  color: rgba(255, 255, 255, 0.8);
+  .overlay 
+  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    opacity: .5;
+    background: rgb(7, 12, 44);
+    
+    }
+    h2
+     {
+      color: #fff;
+      font-size: 36px;
+      font-weight: 600;
+      }
+      .btn-secondary {
+        background: #5fcfdf;
+        border: 1px solid #5fcfdf;
+        color: #fff;
+        }
+  }
+  .testimony-section {
+    position: relative;
+    padding: 7em 0;
+    .heading-section
+    {
+      h2 {
+        font-size: 44px;
+        font-weight: 600;
+        color: #5fcfdf;
+        span {
+          color: rgb(16, 24, 80);;
+          }
+        }
+        p
+        {
+          margin-top: 0;
+          margin-bottom: 1rem;
+          font-family: "Work Sans", Arial, sans-serif;
+          background: #fff;
+          font-size: 16px;
+          line-height: 1.8;
+          font-weight: 400;
+          color: rgba(0, 0, 0, 0.5);
+        }
+
+    }
+    .owl-carousel
+    {
+      .owl-stage-outer
+       {
+        padding-top: 4em;
+        padding-bottom: 2em;
+        position: relative;
+        }
+    }
+    .testimony-wrap {
+      display: block;
+      position: relative;
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(0, 0, 0, 0.8);
+      p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+       
+        font-family: 'Roboto', sans-serif !important;
+        font-size: 18px;
+        line-height: 30px;
+        color: rgb(37, 37, 37);
+        font-weight: 300;
+        text-align: justify;
+      }
+     
+      .name {
+        font-weight: 400;
+        font-size: 18px;
+        margin-bottom: 0;
+        color: #5fcfdf;
+        }
+      .user-img
+       {
+        width: 120px;
+        height: 120px;
+        border-radius: 100%;
+        position: relative;
+        background-repeat: no-repeat;
+        // background-position: 100% 100%;
+        background-size: 100% 100%;
+        }
+        .text
+         {
+          width: calc(100% - 120px);
+          position: relative;
+          }
+      
+      }
+     
+   
+  
+    }
+    .ftco-services
+{
+
+    position: relative;
+    z-index: 1;
+    margin-top: -7%;
+    .no-gutters
+     {
+        margin-right: 0;
+        margin-left: 0;
+     }
+     .services
+      {
+        display: block;
+        width: 20%;
+        position: relative;
+        -moz-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        .media
+         {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: start;
+            -ms-flex-align: start;
+            align-items: flex-start;
+        }
+        .icon
+         {
+            line-height: 1.3;
+            position: relative;
+            width: 120px;
+            height: 120px;
+            background: #fff;
+            margin: 0 auto;
+            margin-top: -60px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            border-radius: 50%;
+            
+        }
+        .media-body
+         {
+            color: rgba(255, 255, 255, 0.8);
+            h3 {
+                font-weight: 500;
+                font-size: 22px;
+                color: #fff;
+                }
+                p {
+                    margin-top: 0;
+                    margin-bottom: 1rem;
+                    }
+         }
+         .p-2
+          {
+            padding: 0.5rem !important;
+          }
+          .mt-3, .my-3
+           {
+            margin-top: 1rem !important;
+          }
+     }
+
+} 
+.intro
+{
+  padding: 1% 10%;
+  background: rgba(7, 12, 44, 0.952);
+  margin-bottom: 3%;
+  p
+  {
+    color: white;
+    font-weight: bold;
+  }
+}
+@media (max-width: 767.98px)
+{
+      .ftco-services
+      {
+        .services
+        {
+        .media-body
+            {
+              padding-bottom: 3.5em !important;
+
+            }
+        }
+
+      }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px)
+{
+  .s2
+  {
+    padding: 0% 5%;
+    .vc_column-inner
+    {
+      padding: 40px 30px 30px !important;
+      
+    }
+
+  }   
+
+}
+@media only screen and (min-width: 768px) and (max-width: 991px)
+{
+  .s2
+  {
+    padding: 0% 0%;
+    .vc_column-inner
+    {
+      padding: 40px 30px 30px !important;
+      
+    }
+    .wpb_wrapper
+    {
+      p
+      {
+        font-size: 15px !important;
+
+
+      }
+ 
+    }
+
+  }  
+  .testimony-section
+  {
+    .AboutUsh2MQ
+    {
+      font-size: 34px !important;
+
+    }
+    .AboutUsPMQ
+    {
+      font-size: 15px !important;
+
+    }
+
+  }
+  .ftco-services
+  {
+    .no-gutters
+    {
+      .services
+      {
+        width: 100%;
+      }
+    }
+  }
+ 
+ 
+    
+  
+
+}
+@media only screen and (max-width: 767px) 
+{
+  .s2
+  {
+    padding: 0% 20%;
+    .vc_column-inner
+    {
+      padding: 40px 30px 30px !important;
+      
+    }
+    .wpb_wrapper
+    {
+      p
+      {
+        font-size: 18px !important;
+
+
+      }
+ 
+    }
+
+  }  
+  .ftco-intro
+  {
+    .align-items-centerMQ
+    {
+      margin-top: 8% !important;
+    }
+
+  }
+  .testimony-section
+  {
+    padding: 7em 4%;
+
+    .AboutUsh2MQ
+    {
+      font-size: 32px !important;
+
+    }
+    .AboutUsPMQ
+    {
+      font-size: 14px !important;
+
+    }
+    .user-img
+    {
+      width: 100px !important;
+      height: 100px !important;
+    }
+    .MQPOwl
+    {
+      text-align: left !important;
+      font-family: auto !important;
+      font-size: 15px !important;
+
+    }
+
+  }
+  .ftco-services
+  {
+    .no-gutters
+    {
+      .services
+      {
+        width: 100%;
+      }
+    }
+  }
+
+}    
+@media only screen and (max-width: 450px) 
+{
+  .s2
+  {
+    padding: 0% 15%;
+    .vc_column-inner
+    {
+      padding: 40px 30px 30px !important;
+      
+    }
+    .wpb_wrapper
+    {
+      p
+      {
+        font-size: 18px !important;
+
+
+      }
+ 
+    }
+
+  } 
+  .ftco-intro
+  {
+    .align-items-centerMQ
+    {
+      margin-top: 8% !important;
+    }
+
+  }
+  .itemWidthXS
+  {
+    width: 100% !important;
+  }
+
+  .ftco-intro 
+  {
+    background: #070c2cfa !important;
+  }
+}     

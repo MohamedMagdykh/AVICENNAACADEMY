@@ -1,0 +1,151 @@
+
+<article class="content ">
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('../../../assets/aboutUs.jpg');">
+      <div class="overlay"></div>
+      <div class="container">
+              <div class="row no-gutters slider-text align-items-center justify-content-center">
+                <div class="col-md-9 ftco-animate text-center fadeInUp ftco-animated">
+                      <h1 class="mb-2 bread RegisterH2">Add Child</h1>
+                      <p class="breadcrumbs">
+                          <span class="mr-2">
+                                  <a routerLink="">
+                                      Home <i class="fas fa-angle-right"></i>
+                                  </a>
+                          </span>
+                          <span>Add Child<i class="fas fa-angle-right"></i> </span>
+                      </p>
+               </div>
+          </div>
+      </div>
+  </section>
+  <div class="aside">
+  
+  </div>
+      <section class="s1 ">
+       
+             
+           
+          
+        
+              <div class="contact-us-card">
+                <form [formGroup]="registerstudentForm" (ngSubmit)="addchild()" >
+                    <div class="text-center">
+                      <i class="far fa-user"></i> 
+                      <h1  class="text-center RegisterH"> Add Child</h1>
+                    </div>
+       
+            <div class="col-12">
+                <div class="row">
+                    <div class="field  col-lg-6">
+                        <label for="text"> Frist Name</label>
+                        <input class="form-control" formControlName="firstName" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"   type="text" placeholder="Frist Name">
+                        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                          <div *ngIf="f.firstName.errors.required">Frist Name is required</div>
+                        </div>
+                      </div>
+                      <div class="field  col-lg-6">
+                        <label for="text"> Last Name</label>
+                        <input class="form-control" formControlName="lastName" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"   type="text" placeholder="Last Name">
+                        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                          <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                        </div>
+                      </div> 
+
+                </div>
+            </div>
+            <div class="col-12" style="margin-top: 10px;">
+                <div class="row">
+                    <div class="field  col-lg-6">
+                        <label for="text"> Phone</label>
+                        <input class="form-control"  formControlName="phone" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }"    type="text" placeholder="Phone">
+                        <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                          <div *ngIf="f.phone.errors.required"> phone is required</div>
+                          <div *ngIf="f.phone.errors.pattern">Mobile Number  Must Be Only Numbers</div>
+                        </div>
+                      </div> 
+                      <div class="form-group col-lg-6">
+                        <label for="e-mail">E-mail</label>
+                        <input type="email" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"  placeholder="E-mail"  class="form-control" id="e-mail" name="e-mail">
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                          <div *ngIf="f.email.errors.required">please Enter Your Mail</div>
+                          <div *ngIf="f.email.errors.email || f.email.errors.pattern">Format Mail You Enterd Not Correct</div>
+                      </div> 
+                        </div>
+
+                </div>
+            </div>
+                     
+                      
+                        <div class="form-group col-lg-12">
+                          <label for="name" >Academic Year </label>
+                          <select class="form-control" formControlName="year_id" type="year_id" [ngClass]="{ 'is-invalid': submitted && f.year_id.errors }"    id="year_id"  aria-label="Default select example">
+                              <option value="" disabled selected hidden>Choose Year</option>
+                              <option value='{{item.name}}' id="{{item.id}}"  *ngFor="let item of yearData"   >{{item.name}}</option>
+                            </select>
+                            <div *ngIf="submitted && f.year_id.errors" class="invalid-feedback">
+                              <div *ngIf="f.year_id.errors.required">Academic Year is required</div>
+                            </div>
+                      </div>
+                      <div class="col-12" style="margin-top: 10px;">
+                        <div class="row">
+                            <div class="form-group col-lg-6">
+                                <mat-form-field style="width: 100%;" id="preferedTimes1">
+                                  <mat-label style="font-size: 1rem;">Preferred Time </mat-label>
+                                  <mat-select formControlName="preferedTimes" [ngClass]="{ 'is-invalid': submitted && f.preferedTimes.errors }" placeholder="Choose prefered Times" multiple class="form-control" id="preferedTimes2"  name="preferedTimes" >
+                                    <mat-option *ngFor="let item of time" [value]="item.id">{{item.time}}</mat-option>
+                                  </mat-select>
+                                </mat-form-field> 
+                                <div *ngIf="submitted && f.preferedTimes.errors" class="invalid-feedback">
+                                  <div *ngIf="f.preferedTimes.errors.required">preferedTimes is required</div>
+                                 </div>
+                             </div>
+                             <div class="form-group col-lg-6">
+                                <mat-form-field style="width: 100%;" id="preferedTimes1">
+                                  <mat-label style="font-size: 1rem;">Preferred days </mat-label>
+                                  <mat-select formControlName="preferedDays" [ngClass]="{ 'is-invalid': submitted && f.preferedDays.errors }" placeholder="Choose prefered Days" multiple class="form-control" id="preferedDays2"  name="preferedTimes" >
+                                    <mat-option *ngFor="let item of days" [value]="item">{{item}}</mat-option>
+                                </mat-select>
+                                </mat-form-field> 
+                                <div *ngIf="submitted && f.preferedDays.errors" class="invalid-feedback">
+                                  <div *ngIf="f.preferedDays.errors.required">preferedDays is required</div>
+                                 </div>
+                             </div>
+
+                        </div>
+                    </div>
+        
+                    <div class="row">
+                        <div class="form-group col-lg-6">
+                        <label for="Password">Password</label>
+                        <input type="password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"  placeholder="Password" class="form-control" id="Password" name="Password">
+                        <div *ngIf="submitted && f.password.errors" class="invalid-feedback ">
+                          <div *ngIf="f.password.errors.required">Please Enter Your Password</div>
+                          <div *ngIf="f.password.errors.minlength">Your Password Minlength 8 Digits</div>
+                          <div *ngIf="f.password.errors.mustMatch">Passwords do not match</div>
+                      </div>
+                        </div>
+                        <div class="form-group col-lg-6">
+                            <label for="ConfirmPass">Confirm Password</label>
+                            <input  type="password" formControlName="confirmPassword" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" placeholder="Confirm Password" class="form-control" id="ConfirmPass" name="ConfirmPass">
+                            <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback ">
+                              <div *ngIf="f.confirmPassword.errors.required">Please Enter Your ConfirmPassword</div>
+                              <div *ngIf="f.confirmPassword.errors.minlength">Your ConfirmPassword Minlength 8 Digits</div>
+                              <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords do not match</div>
+                     
+                          </div>
+                            </div>
+                    </div>
+                  <div class="form-group text-center">
+                    <button class="btn start-project-btn text-white form-control"  style=" background-color: #5fcfdf">Create</button>
+                  </div>
+               
+                </form>
+              </div>
+           
+  
+      </section>
+  
+  </article>
+  
+  
+  

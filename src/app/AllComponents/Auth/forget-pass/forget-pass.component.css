@@ -1,0 +1,189 @@
+.s1 {
+  overflow: hidden;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.s1 h1 {
+  position: relative;
+  margin-bottom: 6%;
+  left: 0;
+  right: 0;
+  color: #5fcfdf;
+  font-weight: bold;
+}
+
+.s1 .order-2 {
+  position: absolute;
+  left: 9%;
+  top: 25%;
+}
+
+.s1 .forget-pass {
+  background-color: #ecececd1;
+  margin-top: 2%;
+  margin-bottom: 5%;
+  padding: 80px;
+  border-radius: 31px;
+  width: 55%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.s1 .forget-pass .fa-user {
+  font-size: 75px;
+  margin-bottom: 0%;
+  color: #5fcfdf;
+}
+
+.s1 .forget-pass .text-lightBlue {
+  color: #5fcfdf !important;
+}
+
+.s1 .forget-pass .form-control {
+  border-radius: 7px;
+  background-color: #F5F6F4;
+}
+
+.s1 .forget-pass .start-project-btn {
+  margin-top: 5%;
+  width: 50%;
+  height: 50px;
+}
+
+.s1 .forget-pass .start-project-btn:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.s1 .forget-pass .Forgotten {
+  text-align: left !important;
+}
+
+.s1 .forget-pass .Forgotten span {
+  color: #5fcfdf;
+}
+
+.s1 .forget-pass .Forgotten span:hover {
+  color: black !important;
+}
+
+.s1 .forget-pass .create {
+  text-align: right !important;
+}
+
+.s1 .forget-pass .create span {
+  color: #5fcfdf;
+}
+
+.s1 .forget-pass .create span:hover {
+  color: black !important;
+}
+
+.aside {
+  width: 100%;
+  height: 20px;
+  background: #5fcfdf;
+  margin-bottom: 5%;
+}
+
+.hero-wrap {
+  height: 300px;
+  width: 100%;
+  position: inherit;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+}
+
+.hero-wrap .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: '';
+  opacity: .3;
+  background: #070c2c;
+}
+
+.hero-wrap .slider-text {
+  height: 300px;
+}
+
+.hero-wrap .slider-text .breadcrumbs {
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.hero-wrap .slider-text .breadcrumbs span {
+  color: #fff;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-wrap .slider-text .breadcrumbs span a {
+  color: #fff;
+}
+
+.hero-wrap .bread {
+  font-weight: 900;
+  color: #fff;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .s1 .forget-pass {
+    padding: 45px;
+  }
+  .s1 .forget-pass h1 {
+    font-size: 26px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .s1 .forget-pass {
+    padding: 45px;
+  }
+  .s1 .forget-pass h1 {
+    font-size: 26px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .s1 .forget-pass {
+    padding: 15px !important;
+    width: 75% !important;
+  }
+  .s1 .forget-pass h1 {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .s1 .forget-pass {
+    padding: 0px !important;
+    padding-top: 10px !important;
+    width: 80% !important;
+  }
+  .s1 .forget-pass h1 {
+    font-size: 16px !important;
+  }
+  .s1 .forget-pass .btn-danger {
+    width: 65%;
+  }
+  .s1 .forget-pass .fa-user {
+    font-size: 55px;
+  }
+}
+/*# sourceMappingURL=forget-pass.component.css.map */

@@ -1,0 +1,204 @@
+
+
+.student-profile {
+    border-radius: 10px;
+	.card {
+		border-radius: 30px;
+		padding: 2%;
+        .card-header {
+			.profile_img {
+				width: 150px;
+				height: 150px;
+				object-fit: cover;
+				margin: 10px auto;
+				border: 10px solid #ccc;
+				border-radius: 50%;
+			}
+		}
+		h3 {
+			font-size: 20px;
+			font-weight: 700;
+		}
+        p {
+			font-size: 16px;
+			color: #000;
+		}
+	}
+    .table {
+		th {
+			font-size: 14px;
+			padding: 5px 10px;
+			color: #000;
+		}
+		td {
+			font-size: 14px;
+			padding: 5px 10px;
+			color: #000;
+		}
+	}
+}
+
+
+
+#NewPass
+{
+	max-width: 38%;
+	margin-right: 2%;
+	margin-left: auto;
+
+}
+#ConNewPass
+{  
+	max-width: 38%;
+	margin-left: 2%;
+	margin-right: auto;
+}
+.OldPass
+{
+	margin-left:auto ;
+	margin-right: auto ;
+}
+.name
+{
+	 .fa-edit
+	{
+		position: absolute;
+		right: 2%;
+	}
+	h3
+	{
+		width: 100%;
+	}
+	position: relative;
+
+}
+	
+	.changePhoto
+	{
+		 .cover
+		{
+			position: absolute;
+			width: 150px;
+			height: 150px;
+			object-fit: cover;
+			margin: 10px auto;
+			border-radius: 50%;
+			left: 0;
+			right: 0;
+			cursor: pointer;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			&:hover
+			{
+				background: rgba(7, 12, 45, 0.53);
+				span
+				{
+					display: inline-block !important;
+
+
+				}
+			}
+			span
+			{
+				display: none;
+				font-size: 25px;
+				color: white;
+				
+			}
+		}
+
+	}
+
+	@media only screen and (min-width: 992px) and (max-width: 1199px)
+	{
+		
+	 
+	}
+	@media only screen and (min-width: 768px) and (max-width: 991px)
+	{
+		.general-info
+		{
+			margin-top: 7%;
+
+		}
+		.name
+         {
+	  		.fa-edit
+			{
+				
+				right: 26%;
+			}
+		}
+		
+		
+	  
+	
+	}
+	@media only screen and (max-width: 767px) 
+	{
+		.general-info
+		{
+			margin-top: 7%;
+
+		}
+		#NewPass
+{
+	max-width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+
+}
+#ConNewPass
+{  
+	max-width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 4%;
+	
+}
+.name
+         {
+	  		.fa-edit
+			{
+				
+				right: 24%;
+			}
+		}
+	
+	 
+	
+	}    
+	@media only screen and (max-width: 450px) 
+	{
+		.name
+		{
+			 .fa-edit
+		   {
+			   
+			   right: 10%;
+		   }
+	   }
+	   #ConNewPass
+	   {  
+		   max-width: 80%;
+		   margin-right: auto;
+		   margin-left: auto;
+		   margin-top: 6% !important;
+		   
+	   }
+		
+	}
+	.profile_img{
+		object-fit: contain !important;
+	}
+	.updateBtn
+	{
+		background: #5fcfdf;
+		color: white;
+		height: 50px;
+		margin-top: 5px;
+		width: 50%;
+		margin-left: auto;
+       margin-right: auto;
+	}

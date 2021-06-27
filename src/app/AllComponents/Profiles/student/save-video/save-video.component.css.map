@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,GAAG,CACH;EACI,WAAW,EAAE,GAAG;EAChB,UAAU,EAAE,GAAG;EACf,KAAK,EAAE,GAAG;EACV,eAAe,EAAE,KAAK;CAEzB",
+    "sources": [
+        "save-video.component.scss"
+    ],
+    "names": [],
+    "file": "save-video.component.css"
+}

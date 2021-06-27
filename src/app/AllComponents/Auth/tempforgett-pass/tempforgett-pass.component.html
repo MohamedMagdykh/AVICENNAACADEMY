@@ -1,0 +1,94 @@
+
+<article class="content ">
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('../../../assets/aboutUs.jpg');">
+      <div class="overlay"></div>
+      <div class="container">
+              <div class="row no-gutters slider-text align-items-center justify-content-center">
+                <div class="col-md-9 ftco-animate text-center fadeInUp ftco-animated">
+                      <h1 class="mb-2 bread">Forgotten Password</h1>
+                      <p class="breadcrumbs">
+                          <span class="mr-2">
+                                  <a routerLink="">
+                                      Home <i class="fas fa-angle-right"></i>
+                                  </a>
+                          </span>
+                          <span>Forgotten Password <i class="fas fa-angle-right"></i> </span>
+                      </p>
+               </div>
+          </div>
+      </div>
+  </section>
+  <div class="aside">
+  
+  </div>
+      <section class="s1 ">
+       
+              <div class="forget-pass">
+                <form class="" >
+                    <div class="text-center">
+                      <i class="far fa-user"></i>
+                      <h1  class="text-center">Forgotten Password</h1>
+                    </div>
+                  
+         
+                    <form [formGroup]="ForgetPassForm" (ngSubmit)="ForgetPass()" >
+                        <div>
+                          <div class="row">
+                            <div class="form-group col-lg-12 ">
+                                <input type="text" formControlName="temp" [ngClass]="{ 'is-invalid': submitted && f.temp.errors }"   placeholder="Please Enter Code That Sent To E-mail"  class="form-control mail" id="mail" name="mail">
+                                <div *ngIf="submitted && f.temp.errors" class="invalid-feedback ">
+                                  <div *ngIf="f.temp.errors.required">Please Enter Your Code</div>
+                              </div>
+                                </div>
+                            <div class="form-group col-lg-12 ">
+                            <input type="text" formControlName="mail" [ngClass]="{ 'is-invalid': submitted && f.mail.errors }"   placeholder="E-mail"  class="form-control mail" id="mail" name="mail">
+                            <div *ngIf="submitted && f.mail.errors" class="invalid-feedback ">
+                              <div *ngIf="f.mail.errors.required">Please Enter Your E-Mail</div>
+                          </div>
+                            </div>
+                           
+                        </div>
+                       
+                        <div  class="row" >
+                          <div class="form-group col-lg-6">
+                          <input type="password" formControlName="newpassword" [ngClass]="{ 'is-invalid': submitted && f.newpassword.errors }"  placeholder="new password" class="form-control" id="newpassword" name="newpassword">
+                          <div *ngIf="submitted && f.newpassword.errors" class="invalid-feedback ">
+                            <div *ngIf="f.newpassword.errors.required">Please Enter Your New Password</div>
+                            <div *ngIf="f.newpassword.errors.minlength">Your new password Minlength 8 Digits</div>
+                            <div *ngIf="f.newpassword.errors.mustMatch">new password do not match</div>
+                        </div>
+                          </div>
+                          <div class="form-group col-lg-6">
+                              <input  type="password" formControlName="confirmNewPassword" [ngClass]="{ 'is-invalid': submitted && f.confirmNewPassword.errors }" placeholder="Confirm New Password" class="form-control" id="ConfirmNewPass" name="ConfirmNewPass">
+                              <div *ngIf="submitted && f.confirmNewPassword.errors" class="invalid-feedback ">
+                                <div *ngIf="f.confirmNewPassword.errors.required">Please Enter Your confirm New Password</div>
+                                <div *ngIf="f.confirmNewPassword.errors.minlength">Your confirm New Password Minlength 8 Digits</div>
+                                <div *ngIf="f.confirmNewPassword.errors.mustMatch">Passwords do not match</div>
+                            </div>
+                              </div>
+                      </div>
+                      
+                      <div class="row ">
+                        <div class="form-group col-6">
+                            <button class="btn start-project-btn btn-cancel  btn-danger " type="button" style="margin-left: 50%;" routerLink="/forgetPass"  >Cancel</button>
+                          </div>
+                        <div class="form-group col-6">
+                          <button class="btn start-project-btn text-white btn-send btn-danger form-control" type="submit"  style=" background-color: #5fcfdf;margin-right: 50%;border-color: #5fcfdf;">Send</button>
+                        </div>
+                    </div>
+                        </div>
+                       
+                      </form>
+             
+             
+             
+               
+                </form>
+              </div>
+           
+  
+      </section>
+  
+  </article>
+  
+  
