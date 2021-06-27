@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/mohamedmagdy/Downloads/work/AVICENNA ACADEMY/CenterCourses/src/polyfills.ts */"hN/g");
+module.exports = __webpack_require__(/*! /Users/mohamedmagdy/Downloads/test/AVICENNAACADEMY/src/polyfills.ts */"hN/g");
 
 
 /***/ }),
