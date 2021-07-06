@@ -137,6 +137,10 @@ dropdownSettings:IDropdownSettings;
               reader.onload = (event) => { // called once readAsDataURL is completed
                this.profilePicture = new Blob([reader.result], { type: imfile.type });
                 // console.log(this.imgFile)
+                var type = this.profilePicture.type.substring(this.profilePicture.type.indexOf('/') + 1);
+
+                console.log(type)
+              //  let path = URL.createObjectURL(this.profilePicture)+"."+type;
                let path = URL.createObjectURL(this.profilePicture);
                this.profilePictureUrl = this.sanitizer.bypassSecurityTrustUrl(path);
                if(this.profilePictureUrl!=null)

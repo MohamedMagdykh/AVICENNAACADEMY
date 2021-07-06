@@ -180,5 +180,33 @@
  }    
  @media only screen and (max-width: 450px) 
  {
+  .contact-us-card
+  {
+    padding: 30px !important;
+    .headType
+    {
+      font-size: 0.8rem;
+
+    }
+  }
+  .col-xs-6
+  {
+    max-width: 50% !important;
+
+  }
+  .col-sm-8
+  {
+    max-width: 66.66664% !important;
+   
+
+  }
+  .generationBtn
+  {
+    margin-left: 33%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+
+
+  }
      
  }

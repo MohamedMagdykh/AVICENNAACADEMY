@@ -35,22 +35,26 @@
                     <i class="far fa-user"></i> 
                     <h1  class="text-center RegisterH">Register</h1>
                   </div>
-                  <div class="col-12">
+                  <div class="container-fluid">
                     <div class="row" >
-                      <p class="col-4">Please select your Type User:</p>
+                      <p class="col-lg-4 col-sm-12 headType">Please select your Type User:</p>
+                  
+                      <label class="col-xs-6 col-sm-6 col-md-6 col-lg-2" for="Parent">Parent</label>
                       <input class="col-1" type="radio" id="Parent" name="typeUser" formControlName="typeUser"  value="parent">
-                      <label class="col-2" for="Parent">Parent</label>
+                 
+                   
+                      <label class="col-xs-6 col-sm-6 col-md-6 col-lg-2 col-md-5" for="Instructor">Instructor</label>
                       <input class="col-1" type="radio" id="Instructor" name="typeUser" formControlName="typeUser" value="instructor">
-                      <label class="col-2" for="Instructor">Instructor</label>
+                    
                     </div>
 
                   </div>
               
                   <div class="row" style="margin-top: 1%;margin-bottom: 2%;" *ngIf="registerForm.value.typeUser =='parent'">
-                    <div class="col-6">
+                    <div class="col-lg-6 col-sm-12">
                       <input class="form-control" style="margin-right: 5%;"  formControlName="code" placeholder="Enter Your Generation Code If You Have" type="text" >
                     </div>
-                    <div class="col-4">
+                    <div class="col-lg-4 col-sm-8 generationBtn">
                       <button class=" form-control text-white" type="button" (click)="GenerationCode()" style=" background-color: #5fcfdf">Generate</button>
                     </div>
 
